@@ -24,6 +24,7 @@ export async function initProductsListing() {
             <span class="inline-block rounded-full bg-off-white px-3 py-1 text-xs font-semibold text-ind-orange">${p.category}</span>
           </div>
           <h3 class="font-display text-xl font-bold text-ind-black">${p.name}</h3>
+          ${p.bullets ? `<ul class="mt-3 space-y-1.5">${p.bullets.map(b => `<li class="flex items-start gap-2 text-sm text-grey-dark"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ind-orange"></span><span>${b}</span></li>`).join('')}</ul>` : ''}
           <div class="mt-auto pt-6">
             <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-semibold text-ind-orange transition-colors hover:text-ind-orange-hover">
               Enquire Now
