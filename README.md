@@ -1,56 +1,5 @@
 
 ```
-Poc
-├─ index.html
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ favicon.svg
-│  └─ icons.svg
-├─ src
-│  ├─ App.jsx
-│  ├─ assets
-│  │  ├─ hero.png
-│  │  └─ vite.svg
-│  ├─ components
-│  │  ├─ home
-│  │  │  ├─ ComprehensiveServices.jsx
-│  │  │  ├─ GlobalReach.jsx
-│  │  │  ├─ HeroCarousel.jsx
-│  │  │  ├─ ManufacturingShowcase.jsx
-│  │  │  ├─ StatsRow.jsx
-│  │  │  ├─ Testimonials.jsx
-│  │  │  └─ WhatWeBuild.jsx
-│  │  ├─ layout
-│  │  │  ├─ Footer.jsx
-│  │  │  ├─ HeroNav.jsx
-│  │  │  ├─ PageHero.jsx
-│  │  │  ├─ SiteHeader.jsx
-│  │  │  └─ WhatsAppFloat.jsx
-│  │  └─ ui
-│  │     ├─ PillButton.jsx
-│  │     ├─ ProductCard.jsx
-│  │     └─ SectionHeading.jsx
-│  ├─ data
-│  │  ├─ constants.js
-│  │  ├─ heroSlides.js
-│  │  ├─ industries.js
-│  │  └─ products.js
-│  ├─ hooks
-│  │  ├─ useCarousel.js
-│  │  └─ useCountUp.js
-│  ├─ index.css
-│  ├─ main.jsx
-│  └─ pages
-│     ├─ About.jsx
-│     ├─ Contact.jsx
-│     ├─ Home.jsx
-│     ├─ Industries.jsx
-│     └─ Products.jsx
-└─ vite.config.js
-
-```
-```
 Poc - Copy
 ├─ .firebaserc
 ├─ about.html
@@ -114,6 +63,9 @@ Poc - Copy
 │  ├─ favicon.svg
 │  ├─ hero-1.jpg
 │  └─ icons.svg
+├─ QCP-1.jpg
+├─ QCP-2.jpg
+├─ QCP-3.jpg
 ├─ README.md
 ├─ robots.txt
 ├─ sitemap.xml
