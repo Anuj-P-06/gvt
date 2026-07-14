@@ -1,17 +1,472 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="GVT Engineering India — Custom Reactors, Kettles, Pressure Vessels & Industrial Fabrication. ISO 9001:2002 Certified." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>GVT Engineering India | Industrial Fabrication & Precision Equipment</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="GVT Engineering India — Custom Reactors, Kettles, Pressure Vessels & Industrial Fabrication. ISO 9001:2002 Certified." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <title>GVT Engineering India | Industrial Fabrication & Precision Equipment</title>
+</head>
+
+<body class="min-h-screen bg-white">
+  <main>
+    <!-- Hero Carousel -->
+    <section data-hero-carousel
+      class="relative mx-auto mt-4 h-[520px] max-w-[1400px] cursor-grab overflow-hidden rounded-2xl active:cursor-grabbing sm:mt-6 sm:h-[580px] md:h-[640px]">
+      <nav
+        class="absolute left-0 right-0 top-0 z-30 mx-4 mt-4 flex items-center justify-between rounded-full bg-ind-black/80 px-4 py-3 backdrop-blur md:mx-6 md:mt-6 md:px-6"
+        aria-label="Main navigation">
+        <a href="index.html" class="rounded-full bg-charcoal-card px-4 py-2" aria-current="page">
+          <span class="font-display text-lg font-bold"><span class="text-ind-orange">GVT</span><span class="text-white">
+              Engineering</span></span>
+        </a>
+        <div class="hidden items-center gap-1 rounded-full bg-charcoal-card/80 px-2 py-1 lg:flex">
+          <a href="index.html" class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white">Home</a>
+          <a href="about.html"
+            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">About
+            Us</a>
+          <a href="products.html"
+            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Products</a>
+          <a href="industries.html"
+            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Industries</a>
+          <a href="contact.html"
+            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="contact.html"
+            class="cta-btn hidden items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-ind-black transition-colors duration-200 hover:bg-off-white sm:inline-flex">Track
+            Enquiry</a>
+          <a href="contact.html"
+            class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover md:px-5 md:py-2.5 md:text-sm">
+            Get In Touch
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="cta-arrow-icon" aria-hidden="true">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <div class="absolute left-4 top-24 z-30 md:left-12 md:top-28">
+        <a href="about.html"
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur transition-colors hover:bg-white/20">
+          ISO 9001:2002 Certified
+          <span class="text-white/70">Learn more →</span>
+        </a>
+      </div>
+
+      <div data-hero-drag class="absolute inset-0 touch-none">
+        <div data-hero-bg class="absolute inset-0"></div>
+      </div>
+
+      <div class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/30 to-black/10">
+      </div>
+
+      <div class="absolute bottom-8 left-6 z-20 max-w-xl md:bottom-12 md:left-12" aria-live="polite">
+        <div data-hero-text></div>
+      </div>
+
+      <div class="absolute bottom-32 right-6 z-20 hidden md:block md:right-12">
+        <div class="relative h-28 w-44 overflow-hidden rounded-lg bg-charcoal-card/90 backdrop-blur">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80"
+            alt="Manufacturing process preview" class="h-full w-full object-cover opacity-60" loading="lazy" />
+          <span class="absolute left-2 top-2 text-xs text-white/60">/01</span>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"
+                stroke="currentColor" stroke-width="2" class="ml-0.5 text-white" aria-hidden="true">
+                <polygon points="6 3 20 12 6 21 6 3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p class="mt-2 text-xs text-white">See Our Manufacturing Process</p>
+      </div>
+
+      <a href="https://wa.me/919876543210?text=Hello%20GVT%20Engineering%2C%20I%20would%20like%20a%20free%20quote."
+        target="_blank" rel="noopener noreferrer"
+        class="animate-spin-slow absolute bottom-28 right-6 z-20 hidden h-20 w-20 items-center justify-center md:flex md:bottom-32 md:right-12 lg:bottom-36"
+        aria-label="Get a quote on WhatsApp">
+        <svg viewBox="0 0 100 100" class="h-full w-full">
+          <defs>
+            <path id="quoteCircle" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+          </defs>
+          <circle cx="50" cy="50" r="38" fill="#295e8e" />
+          <text fill="white" font-size="8" font-weight="600" letter-spacing="2">
+            <textPath href="#quoteCircle" startOffset="0">GET A QUOTE • GET A QUOTE •</textPath>
+          </text>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" class="absolute text-white" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </a>
+
+      <div data-hero-dots class="absolute right-6 top-28 z-30 hidden flex-col gap-2 md:flex md:right-12"></div>
+
+      <div class="absolute bottom-6 right-6 z-30 flex items-center gap-4">
+        <button type="button" data-hero-prev aria-label="Previous slide"
+          class="hero-nav-btn flex h-11 w-11 items-center justify-center rounded-full bg-charcoal-card/80 text-white backdrop-blur hover:bg-ind-orange">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <button type="button" data-hero-next aria-label="Next slide"
+          class="hero-nav-btn flex h-11 w-11 items-center justify-center rounded-full bg-charcoal-card/80 text-white backdrop-blur hover:bg-ind-orange">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+        <div class="relative h-[2px] w-24 overflow-hidden rounded-full bg-white/20">
+          <div data-hero-progress class="h-full bg-ind-orange" style="width: 0%"></div>
+        </div>
+        <div class="font-display text-lg font-bold text-white">
+          <span data-hero-number>01</span><span class="text-sm font-normal text-white/40">/04</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Row -->
+    <section class="bg-white py-14">
+      <div class="mx-auto grid max-w-5xl grid-cols-2 md:grid-cols-4">
+        <div class="flex justify-center border-r border-border-light py-4 md:border-r">
+          <div data-count-up="45+" class="flex flex-col items-center px-6 text-center"><span
+              class="font-display text-5xl font-bold text-ind-black"><span data-count-value>0</span></span><span
+              class="mt-2 max-w-[140px] text-sm text-grey-dark">Years of Industrial Expertise</span></div>
+        </div>
+        <div class="flex justify-center border-r-0 py-4 md:border-r md:border-border-light">
+          <div data-count-up="500+" class="flex flex-col items-center px-6 text-center"><span
+              class="font-display text-5xl font-bold text-ind-black"><span data-count-value>0</span></span><span
+              class="mt-2 max-w-[140px] text-sm text-grey-dark">Projects Delivered Nationwide</span></div>
+        </div>
+        <div class="flex justify-center border-r border-border-light py-4 md:border-r">
+          <div data-count-up="10+" class="flex flex-col items-center px-6 text-center"><span
+              class="font-display text-5xl font-bold text-ind-black"><span data-count-value>0</span></span><span
+              class="mt-2 max-w-[140px] text-sm text-grey-dark">Core Industries Served</span></div>
+        </div>
+        <div class="flex justify-center py-4 md:border-r-0">
+          <div data-count-up="100%" class="flex flex-col items-center px-6 text-center"><span
+              class="font-display text-5xl font-bold text-ind-black"><span data-count-value>0</span></span><span
+              class="mt-2 max-w-[140px] text-sm text-grey-dark">ISO Certified Manufacturing</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Build -->
+    <section class="bg-white py-20 px-4">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="label-text mb-4 inline-block text-xs text-ind-orange">Our Process</span>
+        <h2 class="font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">What We Manufacture, We
+          Build with Precision</h2>
+        <p class="mt-4 text-base text-grey-dark">Full-service industrial fabrication team handles every phase with
+          precision.</p>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
+        <div class="what-we-build-card group relative h-80 cursor-pointer overflow-hidden rounded-2xl">
+          <div class="what-we-build-bg absolute inset-0 bg-cover bg-center"
+            style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80')">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ind-black/90 via-ind-black/30 to-transparent"></div>
+          <span
+            class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ind-black">Phase
+            01</span>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="text-lg font-bold text-white">Consultation & Planning</h3>
+            <p class="mt-1 text-xs text-white/70">Site assessment, process analysis, and detailed project scoping with
+              our engineering team.</p>
+          </div>
+        </div>
+        <div class="what-we-build-card group relative h-80 cursor-pointer overflow-hidden rounded-2xl">
+          <div class="what-we-build-bg absolute inset-0 bg-cover bg-center"
+            style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80')">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ind-black/90 via-ind-black/30 to-transparent"></div>
+          <span
+            class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ind-black">Phase
+            02</span>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="text-lg font-bold text-white">Design & Prototyping</h3>
+            <p class="mt-1 text-xs text-white/70">CAD modeling, stress analysis, and client-approved drawings before
+              fabrication begins.</p>
+          </div>
+        </div>
+        <div class="what-we-build-card group relative h-80 cursor-pointer overflow-hidden rounded-2xl">
+          <div class="what-we-build-bg absolute inset-0 bg-cover bg-center"
+            style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80')">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ind-black/90 via-ind-black/30 to-transparent"></div>
+          <span
+            class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ind-black">Phase
+            03</span>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="text-lg font-bold text-white">Manufacturing & Testing</h3>
+            <p class="mt-1 text-xs text-white/70">ISO-certified fabrication, hydro testing, and quality inspection
+              before dispatch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Services -->
+    <section class="rounded-t-[3rem] bg-off-white py-20 px-4">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="label-text mb-4 inline-block text-xs text-ind-orange">Why GVT</span>
+        <h2 class="font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">Comprehensive Industrial
+          Manufacturing Services</h2>
+        <p class="mt-4 text-base text-grey-dark">Our commitment to quality, safety, and client satisfaction makes us the
+          trusted choice across India.</p>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-border-light bg-white p-8 text-left transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">ISO Licensed & Insured</h3>
+          <p class="mt-2 text-sm text-grey-dark">ISO 9001:2002 certified manufacturing with full insurance coverage for
+            every project.</p>
+        </div>
+        <div class="rounded-2xl bg-ind-black p-8 text-left text-white transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <path
+                d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+              <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+              <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">High-Quality Materials</h3>
+          <p class="mt-2 text-sm text-grey-light">Premium SS316, SS304, MS, and FRP materials sourced from certified
+            suppliers.</p>
+        </div>
+        <div class="rounded-2xl border border-border-light bg-white p-8 text-left transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <rect width="16" height="20" x="4" y="2" rx="2" />
+              <line x1="8" x2="16" y1="6" y2="6" />
+              <line x1="16" x2="16" y1="14" y2="18" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">Free Technical Estimates</h3>
+          <p class="mt-2 text-sm text-grey-dark">Detailed technical quotations with engineering specifications at no
+            cost.</p>
+        </div>
+        <div class="rounded-2xl border border-border-light bg-white p-8 text-left transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">Fast Turnaround</h3>
+          <p class="mt-2 text-sm text-grey-dark">Optimized production schedules to meet your plant shutdown windows and
+            deadlines.</p>
+        </div>
+        <div class="rounded-2xl border border-border-light bg-white p-8 text-left transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <path
+                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
+              <circle cx="12" cy="8" r="6" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">Industry Warranty</h3>
+          <p class="mt-2 text-sm text-grey-dark">Comprehensive warranty on all fabricated equipment with post-delivery
+            support.</p>
+        </div>
+        <div class="rounded-2xl border border-border-light bg-white p-8 text-left transition-shadow hover:shadow-md">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ind-orange/10"><svg
+              xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+              <path
+                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+            </svg></div>
+          <h3 class="font-display text-lg font-bold">Leading Reputation</h3>
+          <p class="mt-2 text-sm text-grey-dark">Trusted by 500+ projects across cement, steel, pharma, and water
+            treatment sectors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manufacturing Showcase -->
+    <section class="mx-4 my-10 rounded-2xl bg-ind-black p-8 text-white md:mx-6 md:p-10">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+        <div>
+          <span class="label-text text-xs text-ind-orange">Manufacturing</span>
+          <h2 class="mt-4 font-display text-3xl font-bold leading-tight md:text-4xl">Manufacturing Services Tailored for
+            Your Industry</h2>
+          <ul class="mt-8 space-y-6">
+            <li class="flex gap-4"><span class="font-display text-2xl font-bold text-ind-orange">01</span>
+              <div>
+                <h3 class="font-display text-lg font-bold">Custom Fabrication</h3>
+                <p class="mt-1 text-sm text-grey-light">Tailored reactors, kettles, and vessels built to your exact
+                  process specifications and site constraints.</p>
+              </div>
+            </li>
+            <li class="flex gap-4"><span class="font-display text-2xl font-bold text-ind-orange">02</span>
+              <div>
+                <h3 class="font-display text-lg font-bold">Industrial Automation</h3>
+                <p class="mt-1 text-sm text-grey-light">Integration-ready equipment with instrumentation ports, agitator
+                  mounts, and jacketed systems.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="products.html"
+            class="cta-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">View
+            All Products</a>
+        </div>
+        <div class="relative">
+          <div class="overflow-hidden rounded-2xl"><img
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80" alt="Manufacturing facility"
+              class="h-80 w-full object-cover md:h-96" loading="lazy" /></div>
+          <div
+            class="absolute -bottom-4 left-4 max-w-xs rounded-2xl bg-white p-5 text-ind-black shadow-xl md:-bottom-6 md:left-6">
+            <p class="font-display text-2xl font-bold text-ind-orange">45+</p>
+            <p class="mt-1 text-sm font-semibold">Years of Fabrication Excellence</p>
+            <p class="mt-1 text-xs text-grey-dark">Delivering precision-engineered equipment to India's leading
+              industrial plants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Reach -->
+    <section class="bg-white py-20 px-4">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div>
+          <span class="label-text text-xs text-ind-orange">Nationwide Reach</span>
+          <h2 class="mt-4 font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">From Our Factory
+            Floor to Your Plant Gate</h2>
+          <p class="mt-4 text-grey-dark">With 500+ successful deliveries across India, GVT Engineering ensures your
+            equipment arrives safely — by road, cargo, or sea — with complete installation support.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-border-light p-5 transition-shadow hover:shadow-md"><svg
+                xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                <path d="M15 18H9" />
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
+              <h3 class="mt-3 font-display text-sm font-bold">Road & Rail Transport</h3>
+              <p class="mt-1 text-xs text-grey-dark">Oversized equipment transported safely with escort vehicles across
+                all states.</p>
+            </div>
+            <div class="rounded-2xl border border-border-light p-5 transition-shadow hover:shadow-md"><svg
+                xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" class="text-ind-orange" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+              <h3 class="mt-3 font-display text-sm font-bold">Pan-India Network</h3>
+              <p class="mt-1 text-xs text-grey-dark">Delivery to every major industrial hub — from Gujarat to Odisha,
+                Punjab to Tamil Nadu.</p>
+            </div>
+          </div>
+          <a href="contact.html"
+            class="cta-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Plan
+            Your Delivery</a>
+        </div>
+        <div class="overflow-hidden rounded-2xl"><img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80"
+            alt="Equipment delivery nationwide" class="h-full min-h-[320px] w-full object-cover" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mx-4 mb-4 rounded-2xl bg-ind-black pt-16 pb-8 text-white md:mx-6 md:mb-6">
+      <div class="px-6 md:px-10">
+        <div class="grid gap-12 md:grid-cols-3">
+          <div>
+            <h2 class="font-display text-3xl font-bold leading-tight md:text-4xl">Let's Build The Future Together</h2><a
+              href="contact.html"
+              class="cta-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Get
+              Started</a>
+          </div>
+          <div>
+            <h3 class="label-text mb-4 text-xs text-grey-light">Contact</h3>
+            <ul class="space-y-3 text-sm text-grey-light">
+              <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  class="mt-0.5 shrink-0 text-ind-orange" aria-hidden="true">
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>D-12, Meerut Road, Industrial Area, Ghaziabad(U.P.), India – 201002</li>
+              <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  class="shrink-0 text-ind-orange" aria-hidden="true">
+                  <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                </svg><a href="tel:+919876543210" class="hover:text-white">+91-9999775755</a></li>
+              <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  class="shrink-0 text-ind-orange" aria-hidden="true">
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                </svg><a href="mailto:exports@gvtgroup.net" class="hover:text-white">exports@gvtgroup.net</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="label-text mb-4 text-xs text-grey-light">Follow Us</h3>
+            <div class="flex gap-3"><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg></a></div>
+          </div>
+        </div>
+        
+        <div
+          class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border-dark pt-6 text-xs text-grey-light md:flex-row">
+          <p>© <span data-current-year>2026</span> GVT Engineering India Private Limited. All rights reserved.</p>
+          <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
+              href="about.html" class="hover:text-white">About</a><a href="products.html"
+              class="hover:text-white">Products</a><a href="industries.html" class="hover:text-white">Industries</a><a
+              href="contact.html" class="hover:text-white">Contact</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp float container -->
+    <div id="whatsapp-float-container"></div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
 </html>

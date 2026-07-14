@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | GVT Engineering India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body class="min-h-screen bg-off-white text-ind-black">
+    <div id="admin-auth" class="flex min-h-screen items-center justify-center px-4">
+      <div class="w-full max-w-md rounded-2xl border border-border-light bg-white p-8 shadow-sm">
+        <h1 class="text-center font-display text-2xl font-bold">Admin Login</h1>
+        <p class="mt-2 text-center text-sm text-grey-dark">Sign in to manage products</p>
+        
+        <form id="login-form" class="mt-8 space-y-4">
+          <div>
+            <label for="admin-email" class="mb-1 block text-sm font-semibold">Email</label>
+            <input id="admin-email" type="email" required class="w-full rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange" />
+          </div>
+          <div>
+            <label for="admin-password" class="mb-1 block text-sm font-semibold">Password</label>
+            <input id="admin-password" type="password" required class="w-full rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange" />
+          </div>
+          <div id="login-error" class="hidden text-sm text-red-500"></div>
+          <button type="submit" class="w-full rounded-full bg-ind-orange py-3 text-sm font-semibold text-white transition-colors hover:bg-ind-orange-hover">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="admin-dashboard" class="hidden min-h-screen">
+      <header class="sticky top-0 z-40 bg-white shadow-sm">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
+          <div class="font-display text-xl font-bold text-ind-black">GVT Admin</div>
+          <button id="logout-btn" class="text-sm font-medium text-grey-dark hover:text-ind-black">Sign Out</button>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+        <div class="flex items-center justify-between">
+          <h1 class="font-display text-3xl font-bold">Products</h1>
+          <button id="add-product-btn" class="rounded-full bg-ind-orange px-5 py-2 text-sm font-semibold text-white hover:bg-ind-orange-hover">Add Product</button>
+        </div>
+
+        <div class="mt-8 overflow-hidden rounded-2xl border border-border-light bg-white shadow-sm">
+          <table class="w-full text-left text-sm">
+            <thead class="border-b border-border-light bg-off-white text-grey-dark">
+              <tr>
+                <th class="px-6 py-4 font-semibold">Image</th>
+                <th class="px-6 py-4 font-semibold">Name</th>
+                <th class="px-6 py-4 font-semibold">Category</th>
+                <th class="px-6 py-4 text-right font-semibold">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-list" class="divide-y divide-border-light">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+          <div id="admin-products-loading" class="py-12 text-center text-sm text-grey-dark">Loading products...</div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
+      <div class="w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-xl">
+        <div class="flex items-center justify-between border-b border-border-light px-6 py-4">
+          <h2 id="modal-title" class="font-display text-xl font-bold">Add Product</h2>
+          <button id="close-modal-btn" class="text-grey-dark hover:text-ind-black">✕</button>
+        </div>
+        <div class="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-6">
+          <form id="product-form" class="space-y-5">
+            <input type="hidden" id="product-id" />
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Product Name</label>
+              <input id="product-name" required class="w-full rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange" />
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Category Slug</label>
+              <select id="product-category" required class="w-full rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange">
+                <option value="reactors">reactors</option>
+                <option value="zinc-kettles">zinc-kettles</option>
+                <option value="storage-tanks">storage-tanks</option>
+                <option value="heat-exchangers">heat-exchangers</option>
+                <option value="custom-fabrication">custom-fabrication</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Image URL</label>
+              <input id="product-image" required class="w-full rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange" />
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Description</label>
+              <textarea id="product-desc" required rows="3" class="w-full resize-none rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange"></textarea>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Specifications (one per line)</label>
+              <textarea id="product-specs" required rows="4" class="w-full resize-none rounded-xl border border-border-light px-4 py-3 text-sm outline-none focus:border-ind-orange"></textarea>
+            </div>
+            <div class="flex justify-end gap-3 pt-4 border-t border-border-light">
+              <button type="button" id="cancel-modal-btn" class="rounded-full px-5 py-2.5 text-sm font-semibold text-grey-dark hover:bg-off-white">Cancel</button>
+              <button type="submit" id="save-product-btn" class="rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white hover:bg-ind-orange-hover">Save Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/integrations/firebase-admin.js"></script>
+  </body>
+</html>

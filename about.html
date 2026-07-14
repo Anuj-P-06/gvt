@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="About GVT Engineering — 45+ years of industrial fabrication excellence in Pune, India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <title>About Us | GVT Engineering India</title>
+</head>
+
+<body class="min-h-screen bg-white">
+  <header class="sticky top-0 z-40 mx-4 mt-4 rounded-full bg-ind-black/95 px-4 py-3 backdrop-blur md:mx-6 md:px-6">
+    <nav class="flex items-center justify-between" aria-label="Main navigation">
+      <a href="index.html" class="rounded-full bg-charcoal-card px-4 py-2"><span
+          class="font-display text-lg font-bold"><span class="text-ind-orange">GVT</span><span class="text-white">
+            Engineering</span></span></a>
+      <div class="hidden items-center gap-1 rounded-full bg-charcoal-card/80 px-2 py-1 lg:flex">
+        <a href="index.html"
+          class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Home</a>
+        <a href="about.html" class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white"
+          aria-current="page">About Us</a>
+        <a href="products.html"
+          class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Products</a>
+        <a href="industries.html"
+          class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Industries</a>
+        <a href="contact.html"
+          class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Contact</a>
+      </div>
+      <a href="contact.html"
+        class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover md:px-5 md:py-2.5 md:text-sm">Get
+        In Touch<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" class="cta-arrow-icon" aria-hidden="true">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg></a>
+    </nav>
+  </header>
+
+  <section class="relative h-[520px] max-w-[1400px] flex h-72 items-end overflow-hidden rounded-2xl sm:mx-6 sm:mt-6"
+    style="background-image:url('hero-1.jpg');background-size:cover;background-position:center;">
+    <div class="absolute inset-0 bg-gradient-to-t from-ind-black/90 via-ind-black/50 to-ind-black/20"></div>
+    <div class="relative z-10 p-8 md:p-10">
+      <nav class="mb-4 flex items-center gap-1 text-xs text-white/60" aria-label="Breadcrumb"><a href="index.html"
+          class="hover:text-white">Home</a><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg><span class="text-white">About Us</span></nav>
+      <h1 class="font-display text-4xl font-bold text-white md:text-5xl">About GVT Engineering</h1>
+      <p class="mt-2 max-w-lg text-sm text-white/70">45+ years of industrial fabrication excellence, serving India's
+        manufacturing backbone.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+      <div>
+        <span class="label-text mb-4 inline-block text-xs text-ind-orange">Our Story</span>
+        <h2 class="font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">Engineering India's
+          Industrial Future Since 1979</h2>
+        <p class="mt-4 text-base text-grey-dark">From a small fabrication workshop to one of India's most trusted
+          industrial equipment manufacturers.</p>
+        <p class="mt-6 text-grey-dark">GVT Engineering India Private Limited specializes in the design, fabrication, and
+          delivery of custom industrial equipment — including reactors, pressure vessels, zinc kettles, and storage
+          tanks — for cement, steel, chemical, pharma, and water treatment sectors.</p>
+        <p class="mt-4 text-grey-dark">Our ISO 9001:2002 certified facility in Pune houses advanced welding, machining,
+          and testing capabilities, enabling us to handle projects from 500L laboratory vessels to 50,000L industrial
+          tanks.</p>
+        <a href="contact.html"
+          class="cta-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Work
+          With Us</a>
+      </div>
+      <div class="overflow-hidden rounded-2xl"><img
+          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80" alt="GVT Engineering facility"
+          class="h-full min-h-[360px] w-full object-cover" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="bg-off-white py-16 px-4">
+    <div class="mx-auto grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-4">
+      <div data-count-up="45+" class="text-center"><span class="font-display text-4xl font-bold text-ind-orange"><span
+            data-count-value>0</span></span>
+        <p class="mt-1 text-sm text-grey-dark">Years Experience</p>
+      </div>
+      <div data-count-up="500+" class="text-center"><span class="font-display text-4xl font-bold text-ind-orange"><span
+            data-count-value>0</span></span>
+        <p class="mt-1 text-sm text-grey-dark">Projects Delivered</p>
+      </div>
+      <div data-count-up="10+" class="text-center"><span class="font-display text-4xl font-bold text-ind-orange"><span
+            data-count-value>0</span></span>
+        <p class="mt-1 text-sm text-grey-dark">Industries Served</p>
+      </div>
+      <div data-count-up="100%" class="text-center"><span class="font-display text-4xl font-bold text-ind-orange"><span
+            data-count-value>0</span></span>
+        <p class="mt-1 text-sm text-grey-dark">ISO Certified</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="mx-auto max-w-3xl">
+      <div class="text-center"><span class="label-text mb-4 inline-block text-xs text-ind-orange">Timeline</span>
+        <h2 class="font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">Our Journey</h2>
+      </div>
+      <div class="mt-12 space-y-8">
+        <div class="flex gap-6 border-l-2 border-ind-orange pl-6"><span
+            class="font-display text-lg font-bold text-ind-orange">1979</span>
+          <p class="text-grey-dark">GVT Engineering founded in Pune, Maharashtra</p>
+        </div>
+        <div class="flex gap-6 border-l-2 border-ind-orange pl-6"><span
+            class="font-display text-lg font-bold text-ind-orange">1995</span>
+          <p class="text-grey-dark">Expanded into galvanizing kettle manufacturing</p>
+        </div>
+        <div class="flex gap-6 border-l-2 border-ind-orange pl-6"><span
+            class="font-display text-lg font-bold text-ind-orange">2005</span>
+          <p class="text-grey-dark">Achieved ISO 9001:2002 certification</p>
+        </div>
+        <div class="flex gap-6 border-l-2 border-ind-orange pl-6"><span
+            class="font-display text-lg font-bold text-ind-orange">2015</span>
+          <p class="text-grey-dark">Crossed 300 nationwide project deliveries</p>
+        </div>
+        <div class="flex gap-6 border-l-2 border-ind-orange pl-6"><span
+            class="font-display text-lg font-bold text-ind-orange">2024</span>
+          <p class="text-grey-dark">500+ projects delivered across 10+ core industries</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mx-4 mb-4 rounded-2xl bg-ind-black pt-16 pb-8 text-white md:mx-6 md:mb-6">
+    <div class="px-6 md:px-10">
+      <div class="grid gap-12 md:grid-cols-3">
+        <div>
+          <h2 class="font-display text-3xl font-bold leading-tight md:text-4xl">Let's Build The Future Together</h2><a
+            href="contact.html"
+            class="cta-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Get
+            Started</a>
+        </div>
+        <div>
+          <h3 class="label-text mb-4 text-xs text-grey-light">Contact</h3>
+          <ul class="space-y-3 text-sm text-grey-light">
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="mt-0.5 shrink-0 text-ind-orange" aria-hidden="true">
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>D-12, Meerut Road, Industrial Area,Ghaziabad(U.P.), India – 201002</li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-ind-orange"
+                aria-hidden="true">
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+              </svg><a href="tel:+919876543210" class="hover:text-white">+91-9999775755</a></li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-ind-orange"
+                aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg><a href="mailto:exports@gvtgroup.net" class="hover:text-white">exports@gvtgroup.net</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label-text mb-4 text-xs text-grey-light">Follow Us</h3>
+          <div class="flex gap-3"><a href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+              aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a><a href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+              aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a><a href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+              aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg></a></div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border-dark pt-6 text-xs text-grey-light md:flex-row">
+        <p>© <span data-current-year>2026</span> GVT Engineering India Private Limited. All rights reserved.</p>
+        <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
+            href="about.html" class="hover:text-white">About</a><a href="products.html"
+            class="hover:text-white">Products</a><a href="industries.html" class="hover:text-white">Industries</a><a
+            href="contact.html" class="hover:text-white">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float container -->
+  <div id="whatsapp-float-container"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
