@@ -39,20 +39,37 @@
           class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Products</a>
         <a href="quality-control.html"
           class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Quality Control and Process</a>
-        <a href="contact.html"
+        <a href="contact.html" aria-current="page"
           class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white transition-colors">Contact</a>
       </div>
-      <a href="contact.html"
-        class="inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover md:px-5 md:py-2.5 md:text-sm">
-        Get In Touch
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow-icon"
-          aria-hidden="true">
-          <path d="M7 7h10v10" />
-          <path d="M7 17 17 7" />
-        </svg>
-      </a>
+      <div class="flex items-center gap-2">
+        <a href="contact.html"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover md:px-5 md:py-2.5 md:text-sm">
+          Get In Touch
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow-icon"
+            aria-hidden="true">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </a>
+        <button id="mobile-menu-btn" class="rounded-full bg-charcoal-card p-2 lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
     </nav>
+    <div id="mobile-menu" class="hidden flex-col gap-1 rounded-2xl bg-charcoal-card/95 p-2 mt-2 lg:hidden">
+      <a href="index.html" class="rounded-full px-4 py-2 text-sm font-medium text-white/70 hover:text-white">Home</a>
+      <a href="about.html" class="rounded-full px-4 py-2 text-sm font-medium text-white/70 hover:text-white">About Us</a>
+      <a href="products.html" class="rounded-full px-4 py-2 text-sm font-medium text-white/70 hover:text-white">Products</a>
+      <a href="quality-control.html" class="rounded-full px-4 py-2 text-sm font-medium text-white/70 hover:text-white">Quality Control and Process</a>
+      <a href="contact.html" aria-current="page" class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white">Contact</a>
+    </div>
   </header>
 
   <main>

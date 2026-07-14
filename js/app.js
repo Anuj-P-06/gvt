@@ -7,6 +7,17 @@ import { initIndustriesListing } from './pages/industries-listing.js'
 import { initContactForm } from './integrations/email.js'
 import { initWhatsAppTracking } from './integrations/whatsapp.js'
 
+const menuBtn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+const iconOpen = document.getElementById('icon-open');
+const iconClose = document.getElementById('icon-close');
+
+menuBtn?.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  iconOpen.classList.toggle('hidden');
+  iconClose.classList.toggle('hidden');
+});
+
 function setFooterYear() {
   document.querySelectorAll('[data-current-year]').forEach((el) => {
     el.textContent = String(new Date().getFullYear())
