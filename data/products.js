@@ -3,62 +3,236 @@ export const categories = [
   { id: 'zinc-kettles', name: 'Zinc Kettles', slug: 'zinc-kettles' },
   { id: 'storage-tanks', name: 'Storage Tanks', slug: 'storage-tanks' },
   { id: 'heat-exchangers', name: 'Heat Exchangers', slug: 'heat-exchangers' },
-  { id: 'custom-fabrication', name: 'Custom Fabrication', slug: 'custom-fabrication' },
-]
+  { id: 'custom-fabrication', name: 'Custom Fabrication', slug: 'custom-fabrication' }
+];
 
 export const products = [
   {
     id: 1,
-    name: 'Industrial Reactor Vessel',
-    category: 'reactors',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
-    description:
-      'Custom-built reactors for chemical and pharmaceutical processing with ASME-compliant design.',
-    specs: ['Capacity: 500L – 50,000L', 'Material: SS316, SS304, MS', 'Design Pressure: Up to 40 bar'],
+    name: 'Acid Pickling Baths',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/acid-pickling-baths.jpg'
   },
   {
     id: 2,
-    name: 'Hot-Dip Galvanizing Kettle',
-    category: 'zinc-kettles',
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
-    description:
-      'High-performance zinc kettles engineered for continuous galvanizing operations in steel plants.',
-    specs: ['Length: 6m – 18m', 'Zinc Capacity: 100–500 MT', 'Low-iron steel construction'],
+    name: 'Activated Carbon Filters 1000x1000',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/activated-carbon-filters-1000x1000.webp'
   },
   {
     id: 3,
-    name: 'FRP Storage Tank',
+    name: 'Air Receivers',
     category: 'storage-tanks',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
-    description:
-      'Corrosion-resistant FRP tanks for water treatment, chemical storage, and effluent plants.',
-    specs: ['Capacity: 1,000L – 100,000L', 'Vertical & horizontal configs', 'UV-resistant gel coat'],
+    image: 'public/GVT_pic/air-receivers.jpg'
   },
   {
     id: 4,
-    name: 'Stainless Steel Storage Tank',
-    category: 'storage-tanks',
-    image: 'https://images.unsplash.com/photo-1537462715879-360eeb71a599?w=800&q=80',
-    description:
-      'SS304/SS316 storage tanks for pharma, food-grade, and high-purity chemical applications.',
-    specs: ['Capacity: 500L – 80,000L', 'Jacketed options available', 'Mirror polish finish'],
+    name: 'Cgl Zinc Kettle',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/cgl-zinc-kettle.jpg'
   },
   {
     id: 5,
-    name: 'Shell & Tube Heat Exchanger',
-    category: 'heat-exchangers',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
-    description:
-      'Efficient heat transfer solutions for industrial process heating and cooling applications.',
-    specs: ['Surface area: 10–500 m²', 'SS316 tube bundles', 'TEMA standards compliant'],
+    name: 'Cyclones',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/cyclones.jpg'
   },
   {
     id: 6,
-    name: 'Custom Pressure Vessel',
+    name: 'Dispersers Mixers',
     category: 'custom-fabrication',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
-    description:
-      'Bespoke pressure vessels fabricated to your exact process requirements and site constraints.',
-    specs: ['Design to client P&ID', 'Third-party inspection ready', 'Complete documentation package'],
+    image: 'public/GVT_pic/dispersers-mixers.jpg'
   },
-]
+  {
+    id: 7,
+    name: 'Dsc 0467',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/dsc_0467.jpg'
+  },
+  {
+    id: 8,
+    name: 'Dsc 0481',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/dsc_0481.jpg'
+  },
+  {
+    id: 9,
+    name: 'Electrolytic Pickling',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/electrolytic-pickling.jpg'
+  },
+  {
+    id: 10,
+    name: 'Filler Disc Blades 1000x1000',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/filler-disc-blades-1000x1000.webp'
+  },
+  {
+    id: 11,
+    name: 'Fluted Dise Blades 1000x1000',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/fluted-dise-blades-1000x1000.webp'
+  },
+  {
+    id: 12,
+    name: 'Frp Tanks',
+    category: 'storage-tanks',
+    image: 'public/GVT_pic/frp-tanks.jpg'
+  },
+  {
+    id: 13,
+    name: 'Galvanizing Kettle',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/galvanizing-kettle.jpg'
+  },
+  {
+    id: 14,
+    name: 'Glue Blenders',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/glue-blenders.jpg'
+  },
+  {
+    id: 15,
+    name: 'Hot Dip Galvanizing Equipments',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/hot-dip-galvanizing-equipments.jpg'
+  },
+  {
+    id: 16,
+    name: 'Jacketed Reactors',
+    category: 'reactors',
+    image: 'public/GVT_pic/jacketed-reactors.jpg'
+  },
+  {
+    id: 17,
+    name: 'Mild Steel Tanks',
+    category: 'storage-tanks',
+    image: 'public/GVT_pic/mild-steel-tanks.jpg'
+  },
+  {
+    id: 18,
+    name: 'Over Head And Semi Eot Cranes 1000x1000',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/over-head-and-semi-eot-cranes-1000x1000.webp'
+  },
+  {
+    id: 19,
+    name: 'Polyurethane Reactors',
+    category: 'reactors',
+    image: 'public/GVT_pic/polyurethane-reactors.jpg'
+  },
+  {
+    id: 20,
+    name: 'Pressure Vessels',
+    category: 'reactors',
+    image: 'public/GVT_pic/pressure-vessels.jpg'
+  },
+  {
+    id: 21,
+    name: 'Reactor (1)',
+    category: 'reactors',
+    image: 'public/GVT_pic/reactor (1).jpg'
+  },
+  {
+    id: 22,
+    name: 'Reactor',
+    category: 'reactors',
+    image: 'public/GVT_pic/reactor.jpg'
+  },
+  {
+    id: 23,
+    name: 'Rotary Kilns',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/rotary-kilns.jpg'
+  },
+  {
+    id: 24,
+    name: 'Rotary Melting Furnace',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/rotary-melting-furnace.jpg'
+  },
+  {
+    id: 25,
+    name: 'Rounded Bottom Kettle For Cgl Flux Lines',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/rounded-bottom-kettle-for-cgl-flux-lines.jpg'
+  },
+  {
+    id: 26,
+    name: 'Scrubbers 500x500',
+    category: 'storage-tanks',
+    image: 'public/GVT_pic/scrubbers-500x500.webp'
+  },
+  {
+    id: 27,
+    name: 'Shell Tube Heat Exchanger',
+    category: 'heat-exchangers',
+    image: 'public/GVT_pic/shell-tube-heat-exchanger.jpg'
+  },
+  {
+    id: 28,
+    name: 'Silos',
+    category: 'storage-tanks',
+    image: 'public/GVT_pic/silos.jpg'
+  },
+  {
+    id: 29,
+    name: 'Stainless Steel',
+    category: 'custom-fabrication',
+    image: 'public/GVT_pic/stainless-steel.jpg'
+  },
+  {
+    id: 30,
+    name: 'Zinc Boxes',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-boxes.jpg'
+  },
+  {
+    id: 31,
+    name: 'Zinc Kettle (1)',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle (1).jpg'
+  },
+  {
+    id: 32,
+    name: 'Zinc Kettle (2)',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle (2).jpg'
+  },
+  {
+    id: 33,
+    name: 'Zinc Kettle (3)',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle (3).jpg'
+  },
+  {
+    id: 34,
+    name: 'Zinc Kettle (4)',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle (4).jpg'
+  },
+  {
+    id: 35,
+    name: 'Zinc Kettle (5)',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle (5).jpg'
+  },
+  {
+    id: 36,
+    name: 'Zinc Kettle For Cgl',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle-for-cgl.png'
+  },
+  {
+    id: 37,
+    name: 'Zinc Kettle',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-kettle.jpg'
+  },
+  {
+    id: 38,
+    name: 'Zinc Pot',
+    category: 'zinc-kettles',
+    image: 'public/GVT_pic/zinc-pot.jpg'
+  }
+];

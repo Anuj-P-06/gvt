@@ -24,16 +24,7 @@ export async function initProductsListing() {
             <span class="inline-block rounded-full bg-off-white px-3 py-1 text-xs font-semibold text-ind-orange">${p.category}</span>
           </div>
           <h3 class="font-display text-xl font-bold text-ind-black">${p.name}</h3>
-          <p class="mt-2 line-clamp-3 text-sm text-grey-dark">${p.description}</p>
           <div class="mt-auto pt-6">
-            <ul class="mb-6 space-y-2 text-sm text-grey-dark">
-              ${(p.specs || []).slice(0, 3).map(s => `
-                <li class="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-0.5 shrink-0 text-ind-orange"><path d="M20 6 9 17l-5-5"/></svg>
-                  <span>${s}</span>
-                </li>
-              `).join('')}
-            </ul>
             <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-semibold text-ind-orange transition-colors hover:text-ind-orange-hover">
               Enquire Now
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
