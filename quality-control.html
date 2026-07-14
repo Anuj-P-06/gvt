@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/animations.css" />
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <title>Industries We Serve | GVT Engineering India</title>
+  <title>Quality Control and Process | GVT Engineering India</title>
 </head>
 
 <body class="min-h-screen bg-white">
@@ -37,8 +37,8 @@
           Us</a>
         <a href="products.html"
           class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Products</a>
-        <a href="industries.html"
-          class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white transition-colors">Industries</a>
+        <a href="quality-control.html"
+          class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white transition-colors">Quality Control and Process</a>
         <a href="contact.html"
           class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Contact</a>
       </div>
@@ -66,25 +66,60 @@
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="m9 18 6-6-6-6" />
           </svg>
-          <span class="text-white">Industries</span>
+          <span class="text-white">Quality Control</span>
         </nav>
-        <h1 class="font-display text-4xl font-bold text-white md:text-5xl">Industries We Serve</h1>
-        <p class="mt-2 max-w-lg text-sm text-white/70">Precision-engineered equipment for every major industrial sector
-          across India.</p>
+        <h1 class="font-display text-4xl font-bold text-white md:text-5xl">Quality Control Process</h1>
+        <p class="mt-2 max-w-lg text-sm text-white/70">Rigorous testing methodologies ensuring flawless mechanical properties and superior product performance.</p>
       </div>
     </section>
 
+    <!-- Block 1 -->
     <section class="py-20 px-4">
-      <div class="mx-auto max-w-2xl text-center">
-        <span class="label-text mb-4 inline-block text-xs text-ind-orange">Sectors</span>
-        <h2 class="font-display text-3xl font-bold leading-tight text-ind-black md:text-4xl">Built for the Heaviest
-          Industries</h2>
-        <p class="mt-4 text-base text-grey-dark">From cement kilns to pharmaceutical clean rooms, GVT delivers equipment
-          engineered for your sector.</p>
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="public/QCP-1.jpg" alt="Chemical and Hardness Testing" class="h-full min-h-[360px] w-full object-cover" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Chemical Composition Testing</h2>
+          <p class="mt-4 text-base text-grey-dark">Raw material plays the most vital role in achieving the desired mechanical properties. We, at GVT, inspect samples from raw material before taking it for production. Our team of Dedicated lab Technicians keep a close check on the composition of different steel grades.</p>
+          
+          <h2 class="mt-12 font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Hardness Testing</h2>
+          <p class="mt-4 text-base text-grey-dark">It measurers whether the hardness achieved is within the prescribed range or not. Different grades of steel give different hardness levels. It signifies the strength and toughness of the disc.</p>
+        </div>
       </div>
+    </section>
 
-      <div id="industries-grid" class="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Rendered by JS from industries.js -->
+    <!-- Block 2 -->
+    <section class="bg-off-white py-20 px-4">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div class="order-2 lg:order-1">
+          <h2 class="font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Eccentricity Test</h2>
+          <p class="mt-4 text-base text-grey-dark">This is done to make sure that there is no axial deviation of points on disc edge in a plain, parallel to the axis of the disc when the disc is rotated about its center.</p>
+          
+          <h2 class="mt-12 font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Basic Dimensional Test Includes</h2>
+          <p class="mt-4 text-base font-medium text-grey-dark leading-relaxed">
+            A. Normal Size | B. Thickness | C. Centre Hole | D. Concavity | E. Fixing Hole | F. PCD | G. Bevel Length | H. Bevel Angle
+          </p>
+        </div>
+        <div class="order-1 overflow-hidden rounded-2xl lg:order-2">
+          <img src="public/QCP-2.jpg" alt="Eccentricity and Dimensional Testing" class="h-full min-h-[360px] w-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 3 -->
+    <section class="py-20 px-4">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="public/QCP-3.jpg" alt="Crack and Ball Testing" class="h-full min-h-[360px] w-full object-cover" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Crack Test and Visual Testing:</h2>
+          <p class="mt-4 text-base text-grey-dark">The test helps to identify the location of any flaws such as surface cracks, scales, pits, nicks and burns etc. on this disc.</p>
+          
+          <h2 class="mt-12 font-display text-2xl font-bold leading-tight text-ind-black md:text-3xl">Ball Test:</h2>
+          <p class="mt-4 text-base text-grey-dark">Ball test is an essay applied to the raw material to make sure they have been cross-rolled, which is an imperative requirement for the fabrication of plowing discs. The test consists of applying load to a 1"(25,4 mm) ball, causing it to go through a pre-drilled hole of 1/2" (12,7 mm) in the material. As a result, any cracks should not exceed a diameter of 3" (76,2mm).</p>
+        </div>
       </div>
     </section>
   </main>
@@ -152,7 +187,7 @@
         <p>© <span data-current-year>2026</span> GVT Engineering India Private Limited. All rights reserved.</p>
         <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
             href="about.html" class="hover:text-white">About</a><a href="products.html"
-            class="hover:text-white">Products</a><a href="industries.html" class="hover:text-white">Industries</a><a
+            class="hover:text-white">Products</a><a href="quality-control.html" class="hover:text-white">Quality Control and Process</a><a
             href="contact.html" class="hover:text-white">Contact</a></div>
       </div>
     </div>

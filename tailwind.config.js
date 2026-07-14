@@ -4,15 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ind-black': '#0A0A0A',
-        'ind-orange': '#295e8e',
-        'ind-orange-hover': '#1d4263',
-        'off-white': '#F4F4F2',
-        'charcoal-card': '#1A1A1A',
-        'grey-light': '#888888',
-        'grey-dark': '#555555',
-        'border-dark': '#2A2A2A',
-        'border-light': '#E5E5E3',
+        'ind-black': '#1a3a5c',
+        'ind-orange': '#f47920',
+        'ind-orange-hover': '#d4661a',
+        'off-white': '#F4F6F9',
+        'charcoal-card': '#162f4a',
+        'grey-light': '#8899aa',
+        'grey-dark': '#445566',
+        'border-dark': '#2a4a6a',
+        'border-light': '#D8E4EE',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
