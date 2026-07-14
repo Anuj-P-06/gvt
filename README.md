@@ -24,12 +24,7 @@ Poc - Copy
 │     ├─ package-lock.json
 │     └─ package.json
 ├─ firebase.json
-├─ hero-1.jpg
-├─ hero-2.jpeg
-├─ hero-3.jpeg
-├─ hero-4.jpeg
 ├─ index.html
-├─ industries.html
 ├─ js
 │  ├─ app.js
 │  ├─ components
@@ -58,14 +53,57 @@ Poc - Copy
 ├─ package-lock.json
 ├─ package.json
 ├─ products.html
-├─ PROJECT_BRIEF.md
 ├─ public
 │  ├─ favicon.svg
+│  ├─ GVT_pic
+│  │  ├─ acid-pickling-baths.jpg
+│  │  ├─ activated-carbon-filters-1000x1000.webp
+│  │  ├─ air-receivers.jpg
+│  │  ├─ cgl-zinc-kettle.jpg
+│  │  ├─ cyclones.jpg
+│  │  ├─ dispersers-mixers.jpg
+│  │  ├─ dsc_0467.jpg
+│  │  ├─ dsc_0481.jpg
+│  │  ├─ electrolytic-pickling.jpg
+│  │  ├─ filler-disc-blades-1000x1000.webp
+│  │  ├─ fluted-dise-blades-1000x1000.webp
+│  │  ├─ frp-tanks.jpg
+│  │  ├─ galvanizing-kettle.jpg
+│  │  ├─ glue-blenders.jpg
+│  │  ├─ hot-dip-galvanizing-equipments.jpg
+│  │  ├─ jacketed-reactors.jpg
+│  │  ├─ mild-steel-tanks.jpg
+│  │  ├─ over-head-and-semi-eot-cranes-1000x1000.webp
+│  │  ├─ polyurethane-reactors.jpg
+│  │  ├─ pressure-vessels.jpg
+│  │  ├─ reactor (1).jpg
+│  │  ├─ reactor.jpg
+│  │  ├─ rotary-kilns.jpg
+│  │  ├─ rotary-melting-furnace.jpg
+│  │  ├─ rounded-bottom-kettle-for-cgl-flux-lines.jpg
+│  │  ├─ scrubbers-500x500.webp
+│  │  ├─ shell-tube-heat-exchanger.jpg
+│  │  ├─ silos.jpg
+│  │  ├─ stainless-steel.jpg
+│  │  ├─ zinc-boxes.jpg
+│  │  ├─ zinc-kettle (1).jpg
+│  │  ├─ zinc-kettle (2).jpg
+│  │  ├─ zinc-kettle (3).jpg
+│  │  ├─ zinc-kettle (4).jpg
+│  │  ├─ zinc-kettle (5).jpg
+│  │  ├─ zinc-kettle-for-cgl.png
+│  │  ├─ zinc-kettle.jpg
+│  │  └─ zinc-pot.jpg
 │  ├─ hero-1.jpg
-│  └─ icons.svg
-├─ QCP-1.jpg
-├─ QCP-2.jpg
-├─ QCP-3.jpg
+│  ├─ hero-2.jpeg
+│  ├─ hero-3.jpeg
+│  ├─ hero-4.jpeg
+│  ├─ icons.svg
+│  ├─ jas.jpg
+│  ├─ QCP-1.jpg
+│  ├─ QCP-2.jpg
+│  └─ QCP-3.jpg
+├─ quality-control.html
 ├─ README.md
 ├─ robots.txt
 ├─ sitemap.xml
