@@ -1,7 +1,7 @@
 export const heroSlides = [
   {
     id: 'reactors',
-    bgImage: 'hero-1.jpg',
+    bgImage: 'public/hero-1.jpg',
     eyebrow: 'ISO 9001:2002 Certified',
     heading: 'Engineering Power. Industrial Precision.',
     subtext:
@@ -13,7 +13,7 @@ export const heroSlides = [
   },
   {
     id: 'zinc-kettles',
-    bgImage: 'hero-2.jpeg',
+    bgImage: 'public/hero-2.jpeg',
     eyebrow: '45+ Years of Excellence',
     heading: 'Built for Cement & Steel Giants.',
     subtext:
@@ -24,7 +24,7 @@ export const heroSlides = [
   },
   {
     id: 'storage-tanks',
-    bgImage: 'hero-3.jpeg',
+    bgImage: 'public/hero-3.jpeg',
     eyebrow: 'Pan-India Delivery',
     heading: 'Storage Solutions Engineered to Scale.',
     subtext:
@@ -35,7 +35,7 @@ export const heroSlides = [
   },
   {
     id: 'pan-india',
-    bgImage: 'hero-4.jpeg',
+    bgImage: 'public/hero-4.jpeg',
     eyebrow: '500+ Projects Delivered',
     heading: 'From Our Factory to Yours. Nationwide.',
     subtext:
