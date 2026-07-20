@@ -93,7 +93,7 @@ html, body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   transform: translateY(-105%);
   transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-  padding-top: 78px; /* pushes links below the fixed navbar height */
+  padding-top: 96px; /* clears full navbar height (mt-4 + py-3 + content) */
   padding-bottom: 1.25rem;
 }
 
@@ -200,48 +200,88 @@ section[data-hero-carousel] nav {
   color: white;
 }
 
-/* ============================================
-   INNER PAGE HERO SECTIONS
-   ============================================ */
-.page-hero-section {
-  height: auto !important;
-  min-height: 260px !important;
-  margin-left: 0.75rem !important;
-  margin-right: 0.75rem !important;
-  margin-top: 0.75rem !important;
-  border-radius: 1rem !important;
-  padding-top: 5rem !important;
-  padding-bottom: 2rem !important;
-}
-
-.page-hero-section h1 {
-  font-size: 1.875rem !important;
-  line-height: 2.25rem !important;
-}
-
 @media (max-width: 767px) {
-  /* Hero Carousel on Index */
-  section[data-hero-carousel] {
-    height: 480px !important;
-    margin-left: 0.75rem !important;
-    margin-right: 0.75rem !important;
-    margin-top: 0.75rem !important;
+  /* Inner page hero section mobile overrides */
+  .page-hero-section {
+    height: auto !important;
+    min-height: 240px !important;
+    margin: 0 0.75rem 0.75rem 0.75rem !important;
     border-radius: 1rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .page-hero-section h1 {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  /* ── Fix 1: Hide CTA buttons from navbar on mobile ── */
+  header .cta-btn,
+  section[data-hero-carousel] nav .cta-btn {
+    display: none !important;
+  }
+
+  /* ── Fix: Place Header / Navbar ABOVE hero sections on mobile ── */
+  header.sticky {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0.75rem 0.75rem 0.5rem 0.75rem !important;
+    background-color: rgba(18, 24, 38, 0.95) !important;
+    z-index: 46 !important;
+  }
+
+  /* Index Carousel Navbar above hero image on mobile */
+  section[data-hero-carousel] nav {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0.75rem 0.75rem 0.5rem 0.75rem !important;
+    z-index: 46 !important;
+  }
+
+  /* Hero Carousel Container on Index */
+  section[data-hero-carousel] {
+    height: 520px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  /* Shift carousel image card & overlay gradient below navbar */
+  section[data-hero-carousel] [data-hero-drag],
+  section[data-hero-carousel] .pointer-events-none.absolute.inset-0.z-10 {
+    top: 4.5rem !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+  }
+
+  /* ISO badge inside hero carousel (positioned inside top of image card) */
+  section[data-hero-carousel] .absolute.left-4.top-24 {
+    top: 5.75rem !important;
+    left: 1.25rem !important;
   }
 
   /* Hero carousel text content */
   section[data-hero-carousel] .absolute.bottom-8.left-6 {
-    bottom: 4.5rem !important;
-    left: 0.75rem !important;
-    right: 0.75rem !important;
+    bottom: 4.25rem !important;
+    left: 1.25rem !important;
+    right: 1.25rem !important;
     max-width: 100% !important;
   }
 
   /* Hero carousel bottom controls */
   section[data-hero-carousel] .absolute.bottom-6.right-6 {
     bottom: 1rem !important;
-    right: 0.75rem !important;
-    left: 0.75rem !important;
+    right: 1.25rem !important;
+    left: 1.25rem !important;
     justify-content: space-between !important;
   }
 
@@ -260,6 +300,16 @@ section[data-hero-carousel] nav {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
     max-width: calc(100% - 2rem) !important;
+  }
+
+  /* Certificate image formatting on mobile: display full image without cropping */
+  .certificate-img,
+  img[src*="jas.jpg"] {
+    object-fit: contain !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
   }
 
   /* Footer layout fine tuning */
