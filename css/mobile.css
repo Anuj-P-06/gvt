@@ -263,10 +263,10 @@ section[data-hero-carousel] nav {
     overflow: hidden !important;
   }
 
-  /* ISO badge inside hero carousel (positioned inside top of image card) */
-  section[data-hero-carousel] .absolute.left-4.top-24 {
-    top: 5.75rem !important;
-    left: 1.25rem !important;
+  /* Hide static & dynamic hero eyebrow pills on mobile view only */
+  .hero-static-badge,
+  .hero-slide-eyebrow {
+    display: none !important;
   }
 
   /* Hero carousel text content */

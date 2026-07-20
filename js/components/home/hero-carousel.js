@@ -35,7 +35,7 @@ export function initHeroCarousel(root) {
     const slide = heroSlides[index]
     const wrap = document.createElement('div')
     wrap.innerHTML = `
-      <span class="hero-text-item mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur" data-delay="0">${slide.eyebrow}</span>
+      <span class="hero-slide-eyebrow hero-text-item mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur" data-delay="0">${slide.eyebrow}</span>
       <h1 class="hero-text-item font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl" data-delay="1">${slide.heading}</h1>
       <p class="hero-text-item mt-4 max-w-md text-base text-white/80" data-delay="2">${slide.subtext}</p>
       <button type="button" class="hero-text-item cta-btn mt-6 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-ind-black" data-delay="3" data-hero-cta>
