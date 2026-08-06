@@ -6,11 +6,11 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="GVT Engineering India — Custom Reactors, Kettles, Pressure Vessels & Industrial Fabrication. ISO 9001:2002 Certified." />
+    content="GVT India — Custom Reactors, Kettles, Pressure Vessels & Industrial Fabrication. ISO 9001:2002 Certified." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/base.css" />
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="css/mobile.css" />
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <title>GVT Engineering India | Industrial Fabrication & Precision Equipment</title>
+  <title>GVT India | Industrial Fabrication & Precision Equipment</title>
 </head>
 
 <body class="min-h-screen bg-white">
@@ -28,23 +28,23 @@
   <!-- Mobile Nav Drawer -->
   <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation">
     <a href="index.html" class="mobile-nav-link active-page" aria-current="page">
-      <span>Home</span>
+      <span>HOME</span>
       <span class="link-dot"></span>
     </a>
     <a href="about.html" class="mobile-nav-link">
-      <span>About Us</span>
+      <span>ABOUT US</span>
       <span class="link-dot"></span>
     </a>
     <a href="products.html" class="mobile-nav-link">
-      <span>Products</span>
+      <span>PRODUCTS</span>
       <span class="link-dot"></span>
     </a>
     <a href="quality-control.html" class="mobile-nav-link">
-      <span>Quality Control and Process</span>
+      <span>QUALITY CONTROL & PROCESS</span>
       <span class="link-dot"></span>
     </a>
     <a href="contact.html" class="mobile-nav-link">
-      <span>Contact</span>
+      <span>CONTACT</span>
       <span class="link-dot"></span>
     </a>
   </nav>
@@ -52,33 +52,51 @@
   <main>
     <!-- Hero Carousel -->
     <section data-hero-carousel
-      class="relative mx-auto mt-4 h-[520px] max-w-[1400px] cursor-grab overflow-hidden rounded-2xl active:cursor-grabbing sm:mt-6 sm:h-[580px] md:h-[640px]">
+      class="relative w-full max-w-none mt-0 h-[640px] cursor-grab overflow-hidden active:cursor-grabbing sm:h-[720px] md:h-[800px] lg:h-[880px] xl:h-[920px] min-h-[640px]">
       <nav
-        class="absolute left-0 right-0 top-0 z-30 mx-4 mt-4 flex items-center justify-between rounded-full bg-ind-black/80 px-4 py-3 backdrop-blur md:mx-6 md:mt-6 md:px-6"
+        class="absolute left-0 right-0 top-0 z-30 flex items-center justify-between border-t-4 border-[#0066C4] bg-white px-6 py-3.5 shadow-md backdrop-blur-md md:px-12 lg:px-16"
         aria-label="Main navigation">
-        <a href="index.html" class="rounded-full bg-charcoal-card px-4 py-2" aria-current="page">
-          <span class="font-display text-lg font-bold"><span class="text-ind-orange">GVT</span><span class="text-white">
-              Engineering</span></span>
+        <a href="index.html" class="flex items-center gap-3 sm:gap-4 py-1 group shrink-0" aria-current="page"
+          aria-label="GVT INDIA Home">
+          <svg
+            class="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 shrink-0 transition-transform duration-300 group-hover:scale-105"
+            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="url(#gvtLogoBg)" />
+            <path d="M12 16L24 9L36 16V32L24 39L12 32V16Z" stroke="#0072CE" stroke-width="3.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M24 15V26M24 26L18 21M24 27L30 21" stroke="#F47920" stroke-width="3.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="24" cy="33" r="2.5" fill="#F47920" />
+            <defs>
+              <linearGradient id="gvtLogoBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0F2844" />
+                <stop offset="1" stop-color="#162F4A" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none" style="font-weight: 900;">
+            <span class="text-ind-orange font-black">GVT</span>
+            <span class="text-slate-900 font-black"> INDIA</span>
+          </span>
         </a>
-        <div class="hidden items-center gap-1 rounded-full bg-charcoal-card/80 px-2 py-1 lg:flex">
-          <a href="index.html" class="rounded-full bg-ind-orange px-4 py-2 text-sm font-medium text-white">Home</a>
+        <div class="hidden items-center gap-1 rounded-full bg-slate-100/90 px-3 py-1.5 border border-slate-200 lg:flex">
           <a href="about.html"
-            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">About
-            Us</a>
+            class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">ABOUT
+            US</a>
           <a href="products.html"
-            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Products</a>
+            class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">PRODUCTS</a>
           <a href="quality-control.html"
-            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Quality
-            Control and Process</a>
+            class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">QUALITY
+            CONTROL</a>
           <a href="contact.html"
-            class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Contact</a>
+            class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">CONTACT</a>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-3">
           <a href="contact.html"
-            class="cta-btn hidden items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-ind-black transition-colors duration-200 hover:bg-off-white sm:inline-flex">Track
+            class="cta-btn hidden items-center justify-center gap-2 rounded-full border border-slate-300 bg-slate-100 px-5 py-2.5 text-xs font-semibold text-slate-800 transition-all duration-200 hover:bg-slate-200 hover:shadow-md sm:inline-flex">Track
             Enquiry</a>
           <a href="contact.html"
-            class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover md:px-5 md:py-2.5 md:text-sm">
+            class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-xs font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-md md:px-6 md:py-3 md:text-sm">
             Get In Touch
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -99,7 +117,7 @@
       </nav>
 
 
-      <div class="hero-static-badge absolute left-4 top-24 z-30 md:left-12 md:top-28">
+      <div class="hero-static-badge absolute left-6 top-24 z-30 md:left-12 lg:left-20 md:top-28">
         <a href="about.html"
           class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur transition-colors hover:bg-white/20">
           ISO 9001:2002 Certified
@@ -114,11 +132,12 @@
       <div class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/30 to-black/10">
       </div>
 
-      <div class="absolute bottom-8 left-6 z-20 max-w-xl md:bottom-12 md:left-12" aria-live="polite">
+      <div class="absolute bottom-10 left-6 z-20 max-w-2xl md:bottom-16 md:left-12 lg:left-20 lg:max-w-3xl"
+        aria-live="polite">
         <div data-hero-text></div>
       </div>
 
-      <div class="absolute bottom-32 right-6 z-20 hidden md:block md:right-12">
+      <div class="absolute bottom-32 right-6 z-20 hidden md:block md:right-12 lg:right-20">
         <div class="relative h-28 w-44 overflow-hidden rounded-lg bg-charcoal-card/90 backdrop-blur">
           <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80"
             alt="Manufacturing process preview" class="h-full w-full object-cover opacity-60" loading="lazy" />
@@ -137,7 +156,7 @@
 
       <a href="https://wa.me/919876543210?text=Hello%20GVT%20Engineering%2C%20I%20would%20like%20a%20free%20quote."
         target="_blank" rel="noopener noreferrer"
-        class="animate-spin-slow absolute bottom-28 right-6 z-20 hidden h-20 w-20 items-center justify-center md:flex md:bottom-32 md:right-12 lg:bottom-36"
+        class="animate-spin-slow absolute bottom-28 right-6 z-20 hidden h-20 w-20 items-center justify-center md:flex md:bottom-32 md:right-12 lg:right-20 lg:bottom-36"
         aria-label="Get a quote on WhatsApp">
         <svg viewBox="0 0 100 100" class="h-full w-full">
           <defs>
@@ -154,9 +173,10 @@
         </svg>
       </a>
 
-      <div data-hero-dots class="absolute right-6 top-28 z-30 hidden flex-col gap-2 md:flex md:right-12"></div>
+      <div data-hero-dots class="absolute right-6 top-28 z-30 hidden flex-col gap-2 md:flex md:right-12 lg:right-20">
+      </div>
 
-      <div class="absolute bottom-6 right-6 z-30 flex items-center gap-4">
+      <div class="absolute bottom-8 right-6 z-30 flex items-center gap-4 md:right-12 lg:right-20 md:bottom-12">
         <button type="button" data-hero-prev aria-label="Previous slide"
           class="hero-nav-btn flex h-11 w-11 items-center justify-center rounded-full bg-charcoal-card/80 text-white backdrop-blur hover:bg-ind-orange">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -326,7 +346,7 @@
                 d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
               <circle cx="12" cy="8" r="6" />
             </svg></div>
-          <h3 class="font-display text-lg font-bold">Industry Warranty</h3>
+          <h3 class="font-display text-lg font-bold">Design Engineering</h3>
           <p class="mt-2 text-sm text-grey-dark">Comprehensive warranty on all fabricated equipment with post-delivery
             support.</p>
         </div>
@@ -338,8 +358,7 @@
                 d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
             </svg></div>
           <h3 class="font-display text-lg font-bold">Leading Reputation</h3>
-          <p class="mt-2 text-sm text-grey-dark">Trusted by 500+ projects across cement, steel, pharma, and water
-            treatment sectors.</p>
+          <p class="mt-2 text-sm text-grey-dark">200+ satisfied customers world wide.</p>
         </div>
       </div>
     </section>
@@ -504,7 +523,7 @@
 
         <div
           class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border-dark pt-6 text-xs text-grey-light md:flex-row">
-          <p>© <span data-current-year>2026</span> GVT Engineering India Private Limited. All rights reserved.</p>
+          <p>© <span data-current-year>2026</span> GVT India Private Limited. All rights reserved.</p>
           <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
               href="about.html" class="hover:text-white">About</a><a href="products.html"
               class="hover:text-white">Products</a><a href="quality-control.html" class="hover:text-white">Quality

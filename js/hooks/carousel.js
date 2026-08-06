@@ -1,9 +1,10 @@
 import { prefersReducedMotion } from '../utilities.js'
 
-export function createCarousel(slideCount, intervalMs = 6000) {
+export function createCarousel(slideCount, intervalMs = 6000, options = {}) {
   let activeSlide = 0
   let isPaused = false
   let timer = null
+  let isScreenWide = options.screenWide ?? true
   const reducedMotion = prefersReducedMotion()
 
   function next() {
@@ -26,9 +27,14 @@ export function createCarousel(slideCount, intervalMs = 6000) {
     resetTimer()
   }
 
+  function setScreenWide(wide) {
+    isScreenWide = Boolean(wide)
+    listeners.forEach((fn) => fn(activeSlide, { isScreenWide }))
+  }
+
   const listeners = new Set()
   function notify() {
-    listeners.forEach((fn) => fn(activeSlide))
+    listeners.forEach((fn) => fn(activeSlide, { isScreenWide }))
     resetTimer()
   }
 
@@ -49,6 +55,10 @@ export function createCarousel(slideCount, intervalMs = 6000) {
     get activeSlide() {
       return activeSlide
     },
+    get isScreenWide() {
+      return isScreenWide
+    },
+    setScreenWide,
     setIsPaused,
     next,
     prev,

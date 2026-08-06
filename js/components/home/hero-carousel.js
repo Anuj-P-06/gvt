@@ -6,7 +6,11 @@ import { icon, prefersReducedMotion } from '../../utilities.js'
 export function initHeroCarousel(root) {
   if (!root) return
 
-  const carousel = createCarousel(heroSlides.length, 6000)
+  // Ensure hero carousel container is screen wide
+  root.classList.add('w-full', 'max-w-none')
+  root.classList.remove('max-w-[1400px]')
+
+  const carousel = createCarousel(heroSlides.length, 6000, { screenWide: true })
   const bgLayer = root.querySelector('[data-hero-bg]')
   const textLayer = root.querySelector('[data-hero-text]')
   const progressBar = root.querySelector('[data-hero-progress]')
@@ -19,7 +23,7 @@ export function initHeroCarousel(root) {
   function renderBackground(index) {
     const slide = heroSlides[index]
     const el = document.createElement('div')
-    el.className = 'absolute inset-0 bg-cover bg-center'
+    el.className = 'absolute inset-0 bg-cover bg-center w-full h-full'
     el.style.backgroundImage = `url(${slide.bgImage})`
     if (!prefersReducedMotion()) {
       el.classList.add('hero-bg-enter')
@@ -35,12 +39,12 @@ export function initHeroCarousel(root) {
     const slide = heroSlides[index]
     const wrap = document.createElement('div')
     wrap.innerHTML = `
-      <span class="hero-slide-eyebrow hero-text-item mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur" data-delay="0">${slide.eyebrow}</span>
-      <h1 class="hero-text-item font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl" data-delay="1">${slide.heading}</h1>
-      <p class="hero-text-item mt-4 max-w-md text-base text-white/80" data-delay="2">${slide.subtext}</p>
-      <button type="button" class="hero-text-item cta-btn mt-6 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-ind-black" data-delay="3" data-hero-cta>
+      <span class="hero-slide-eyebrow hero-text-item mb-4 inline-block rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur sm:text-sm" data-delay="0">${slide.eyebrow}</span>
+      <h1 class="hero-text-item font-display text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" data-delay="1">${slide.heading}</h1>
+      <p class="hero-text-item mt-4 max-w-xl text-base text-white/80 sm:text-lg md:text-xl md:max-w-2xl lg:max-w-3xl" data-delay="2">${slide.subtext}</p>
+      <button type="button" class="hero-text-item cta-btn mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-ind-black shadow-lg transition-all hover:bg-off-white hover:shadow-xl" data-delay="3" data-hero-cta>
         ${slide.ctaText}
-        ${icon('ArrowUpRight', 18, 'cta-arrow-icon')}
+        ${icon('ArrowUpRight', 20, 'cta-arrow-icon')}
       </button>
     `
 
