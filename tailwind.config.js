@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'ind-black': '#1a3a5c',
-        'ind-orange': '#f47920',
-        'ind-orange-hover': '#d4661a',
+        'ind-orange': '#0066C4',
+        'ind-orange-hover': '#00529E',
         'off-white': '#F4F6F9',
         'charcoal-card': '#162f4a',
         'grey-light': '#8899aa',

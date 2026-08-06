@@ -154,12 +154,12 @@ section[data-hero-carousel] nav {
 }
 
 .mobile-nav-link.active-page .link-dot {
-  background: #f47920;
+  background: #0066C4;
   transform: scale(1.3);
 }
 
 .mobile-nav-link:hover .link-dot {
-  background: rgba(244, 121, 32, 0.5);
+  background: rgba(0, 102, 196, 0.5);
 }
 
 /* Bottom CTA inside drawer */
@@ -185,12 +185,12 @@ section[data-hero-carousel] nav {
 }
 
 .mobile-nav-cta .cta-primary {
-  background: #f47920;
+  background: #0066C4;
   color: white;
 }
 
 .mobile-nav-cta .cta-primary:hover {
-  background: #d4661a;
+  background: #00529E;
 }
 
 .mobile-nav-cta .cta-secondary {
