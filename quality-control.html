@@ -35,10 +35,35 @@
       <span>ABOUT US</span>
       <span class="link-dot"></span>
     </a>
-    <a href="products.html" class="mobile-nav-link">
-      <span>PRODUCTS</span>
-      <span class="link-dot"></span>
-    </a>
+    <div class="mobile-nav-products-container">
+      <div class="mobile-nav-link">
+        <a href="products.html" class="flex-1 text-inherit">
+          <span>PRODUCTS</span>
+        </a>
+        <button type="button" data-mobile-dropdown-toggle class="p-1 rounded text-white/70 hover:text-white" aria-label="Toggle products menu">
+          <svg class="h-4 w-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <div data-mobile-sub-menu class="mobile-sub-menu">
+        <a href="products.html?cat=reactors" class="mobile-sub-link">
+          <span>Reactor & Pressure Vessels</span>
+        </a>
+        <a href="products.html?cat=zinc-kettles" class="mobile-sub-link">
+          <span>Zinc Kettle</span>
+        </a>
+        <a href="products.html?cat=storage-tanks" class="mobile-sub-link">
+          <span>Storage Tank</span>
+        </a>
+        <a href="products.html?cat=heat-exchangers" class="mobile-sub-link">
+          <span>Heat Exchanger</span>
+        </a>
+        <a href="products.html?cat=custom-fabrication" class="mobile-sub-link">
+          <span>Custom Fabrications</span>
+        </a>
+      </div>
+    </div>
     <a href="quality-control.html" class="mobile-nav-link active-page" aria-current="page">
       <span>QUALITY CONTROL & PROCESS</span>
       <span class="link-dot"></span>
@@ -50,10 +75,10 @@
   </nav>
 
   <header
-    class="sticky top-0 z-40 w-full border-t-4 border-[#0066C4] bg-white px-6 py-3.5 shadow-md backdrop-blur-md md:px-12 lg:px-16">
+    class="sticky top-0 z-40 w-full border-t-4 border-[#0066C4] bg-white px-6 py-[0.825rem] shadow-md backdrop-blur-md md:px-12 md:py-[1.1rem] lg:px-16">
     <nav class="mx-auto flex max-w-[1600px] items-center justify-between" aria-label="Main navigation">
-      <a href="index.html" class="flex items-center gap-3 sm:gap-4 py-1 group shrink-0" aria-label="GVT INDIA Home">
-        <svg class="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 py-0.5 group shrink-0" aria-label="GVT INDIA Home">
+        <svg class="h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="48" height="48" rx="10" fill="url(#gvtLogoBgQC)"/>
           <path d="M12 16L24 9L36 16V32L24 39L12 32V16Z" stroke="#0072CE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M24 15V26M24 26L18 21M24 27L30 21" stroke="#0066C4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -65,29 +90,58 @@
             </linearGradient>
           </defs>
         </svg>
-        <span class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none" style="font-weight: 900;">
+        <span class="font-display text-[2.09rem] sm:text-[2.52rem] md:text-[2.52rem] lg:text-[3.14rem] font-black uppercase tracking-wide leading-none" style="font-weight: 900; display: inline-block; transform: scaleY(1.65); transform-origin: center;">
           <span class="text-ind-orange font-black">GVT</span>
           <span class="text-slate-900 font-black"> INDIA</span>
         </span>
       </a>
-      <div class="hidden items-center gap-1 rounded-full bg-slate-100/90 px-3 py-1.5 border border-slate-200 lg:flex">
-        <a href="about.html"
-          class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">ABOUT
-          US</a>
-        <a href="products.html"
-          class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">PRODUCTS</a>
-        <a href="quality-control.html"
-          class="rounded-full bg-ind-orange px-5 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all"
-          aria-current="page">QUALITY CONTROL</a>
-        <a href="contact.html"
-          class="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-700 transition-colors hover:bg-slate-200/80 hover:text-slate-900">CONTACT</a>
+      <div class="hidden items-center gap-4 lg:flex">
+        <a href="about.html" class="nav-top-link">ABOUT US</a>
+        <div class="nav-dropdown">
+          <a href="products.html"
+            class="inline-flex items-center gap-2 px-4 py-2 text-base lg:text-lg font-bold uppercase tracking-wider text-slate-900 transition-colors hover:text-[#0066C4] group"
+            aria-expanded="false" aria-haspopup="true">
+            <span>PRODUCTS</span>
+            <svg class="h-4.5 w-4.5 text-slate-500 transition-colors duration-200 group-hover:text-[#0066C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <div class="space-y-0.5">
+              <a href="products.html?cat=reactors" class="nav-dropdown-item">
+                <span>Reactor & Pressure Vessels</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=zinc-kettles" class="nav-dropdown-item">
+                <span>Zinc Kettle</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=storage-tanks" class="nav-dropdown-item">
+                <span>Storage Tank</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=heat-exchangers" class="nav-dropdown-item">
+                <span>Heat Exchanger</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=custom-fabrication" class="nav-dropdown-item">
+                <span>Custom Fabrications</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html" class="nav-dropdown-item">
+                <span>View All Products</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="quality-control.html" class="nav-top-link active-nav" aria-current="page">QUALITY CONTROL</a>
+        <a href="contact.html" class="nav-top-link">CONTACT</a>
       </div>
+
       <div class="flex items-center gap-3">
         <a href="contact.html"
-          class="cta-btn hidden items-center justify-center gap-2 rounded-full border border-slate-300 bg-slate-100 px-5 py-2.5 text-xs font-semibold text-slate-800 transition-all duration-200 hover:bg-slate-200 hover:shadow-md sm:inline-flex">Track
-          Enquiry</a>
-        <a href="contact.html"
-          class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-xs font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-md md:px-6 md:py-3 md:text-sm">
+          class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-md md:px-6 md:py-3 md:text-base">
           Get In Touch
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow-icon"

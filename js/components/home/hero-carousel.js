@@ -131,8 +131,10 @@ export function initHeroCarousel(root) {
   prevBtn?.addEventListener('click', () => carousel.prev())
   nextBtn?.addEventListener('click', () => carousel.next())
 
-  root.addEventListener('mouseenter', () => carousel.setIsPaused(true))
-  root.addEventListener('mouseleave', () => carousel.setIsPaused(false))
+  const hoverTarget = dragLayer || root
+
+  hoverTarget.addEventListener('mouseenter', () => carousel.setIsPaused(true))
+  hoverTarget.addEventListener('mouseleave', () => carousel.setIsPaused(false))
   root.addEventListener('focusin', () => carousel.setIsPaused(true))
   root.addEventListener('focusout', (e) => {
     if (!root.contains(e.relatedTarget)) carousel.setIsPaused(false)

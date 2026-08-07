@@ -108,4 +108,22 @@ export async function initProductsListing() {
     if (!btn) return;
     applyFilter(btn.dataset.cat);
   });
+
+  window.addEventListener('popstate', () => {
+    const cat = new URLSearchParams(window.location.search).get('cat') || 'all';
+    applyFilter(cat);
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="products.html?cat="], a[href="products.html"]');
+    if (link && window.location.pathname.endsWith('products.html')) {
+      const url = new URL(link.href, window.location.origin);
+      const cat = url.searchParams.get('cat') || 'all';
+      applyFilter(cat);
+      if (filterHost) {
+        filterHost.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
 }
+
