@@ -158,9 +158,9 @@ h6 {
 .nav-top-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.375rem 0.75rem;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -171,7 +171,7 @@ h6 {
 
 @media (min-width: 1024px) {
   .nav-top-link {
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
   }
 }
 
