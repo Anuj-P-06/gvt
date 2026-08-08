@@ -116,7 +116,10 @@ export function initHeroCarousel(root) {
       })
     }
 
-    if (slideNumber) slideNumber.textContent = `0${index + 1}`
+    if (slideNumber) {
+      const currentNum = index + 1
+      slideNumber.textContent = currentNum < 10 ? `0${currentNum}` : `${currentNum}`
+    }
 
     dotNav?.querySelectorAll('[data-dot]').forEach((dot, i) => {
       dot.style.height = i === index ? '24px' : '6px'

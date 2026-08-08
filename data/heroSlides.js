@@ -2,8 +2,8 @@ export const heroSlides = [
   {
     id: 'reactors',
     bgImage: 'public/GVT_pic/hero__1.jpeg',
-    eyebrow: 'ISO 9001:2002 Certified',
-    heading: 'Engineering Power. Industrial Precision.',
+    eyebrow: '',
+    heading: 'Rounded bottom kettle for hot dip galvaniztaion.',
     subtext:
       "45+ years of expertise delivering custom Reactors, Kettles & Pressure Vessels for India's heaviest industries.",
     ctaText: 'Get a Free Quote',
@@ -88,6 +88,61 @@ export const heroSlides = [
       'Tailor-made industrial equipment components fabricated to exact client engineering specs.',
     ctaText: 'Contact Us',
     ctaLink: 'contact.html',
+    ctaExternal: false,
+  },
+  {
+    id: 'precision-machining',
+    bgImage: 'public/hero-9.png',
+    eyebrow: 'High Precision Machining',
+    heading: 'Precision Machined Vessel Flanges.',
+    subtext:
+      'High-tolerance CNC turning, large-diameter flange machining, and hydrostatic pressure testing.',
+    ctaText: 'Explore Engineering',
+    ctaLink: 'products.html',
+    ctaExternal: false,
+  },
+  {
+    id: 'hydraulic-pressing',
+    bgImage: 'public/hero-10.png',
+    eyebrow: 'Heavy Industrial Pressing',
+    heading: 'Heavy Hydraulic Pressing & Forming.',
+    subtext:
+      'High-tonnage hydraulic forming and custom fabrication for heavy steel structures.',
+    ctaText: 'View Custom Fabrications',
+    ctaLink: 'products.html?cat=custom-fabrication',
+    ctaExternal: false,
+  },
+  {
+    id: 'galvanizing-tanks',
+    bgImage: 'public/hero-11.jpeg',
+    eyebrow: 'Turnkey Equipment Delivery',
+    heading: 'Custom Galvanizing Tanks & Vessels.',
+    subtext:
+      'Robust galvanizing kettles and pickling tanks built for long service life and high chemical resistance.',
+    ctaText: 'Explore Zinc Kettles',
+    ctaLink: 'products.html?cat=zinc-kettles',
+    ctaExternal: false,
+  },
+  {
+    id: 'heavy-chambers',
+    bgImage: 'public/hero-12.png',
+    eyebrow: 'Heavy Industrial Chambers',
+    heading: 'Custom Steel Vessels & Heavy Fabrications.',
+    subtext:
+      'Heavy-gauge steel forming, custom chamber assembly, and industrial fabrication built for demanding environments.',
+    ctaText: 'Explore Custom Fabrications',
+    ctaLink: 'products.html?cat=custom-fabrication',
+    ctaExternal: false,
+  },
+  {
+    id: 'tank-fabrication',
+    bgImage: 'public/hero-13.jpeg',
+    eyebrow: 'Heavy Duty Tank Fabrication',
+    heading: 'Custom Steel Tank & Kettle Fabrication.',
+    subtext:
+      'Precision MIG/TIG welding, structural reinforcement, and quality-controlled tank manufacturing.',
+    ctaText: 'View Storage Tanks',
+    ctaLink: 'products.html?cat=storage-tanks',
     ctaExternal: false,
   },
 ]

@@ -14,6 +14,9 @@ export async function initProductsListing() {
   let categories = [...staticCategories];
 
   function renderProductCard(p) {
+    const isFillerDisc = p.name && p.name.toLowerCase().includes('filler disc blades');
+    const href = p.enquireLink || (isFillerDisc ? 'https://www.discbladesindia.com/' : 'contact.html');
+    const target = (p.enquireExternal || isFillerDisc || href.startsWith('http')) ? 'target="_blank" rel="noopener noreferrer"' : '';
     return `
       <div data-category="${p.category}" class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border-light bg-white transition-all hover:border-ind-orange hover:shadow-lg">
         <div class="aspect-[4/3] w-full overflow-hidden bg-off-white">
@@ -26,7 +29,7 @@ export async function initProductsListing() {
           <h3 class="font-display text-xl font-bold text-ind-black">${p.name}</h3>
           ${p.bullets ? `<ul class="mt-3 space-y-1.5">${p.bullets.map(b => `<li class="flex items-start gap-2 text-sm text-grey-dark"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ind-orange"></span><span>${b}</span></li>`).join('')}</ul>` : ''}
           <div class="mt-auto pt-6">
-            <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-semibold text-ind-orange transition-colors hover:text-ind-orange-hover">
+            <a href="${href}" ${target} class="inline-flex items-center gap-2 text-sm font-semibold text-ind-orange transition-colors hover:text-ind-orange-hover">
               Enquire Now
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>

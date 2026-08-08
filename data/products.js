@@ -51,17 +51,17 @@ export const products = [
       'Built for durability and reliable performance, meeting the demands of heavy-duty industrial galvanizing applications.'
     ]
   },
-  {
-    id: 5,
-    name: 'Cyclones',
-    category: 'custom-fabrication',
-    image: 'public/GVT_pic/cyclones.jpg',
-    bullets: [
-      'Efficiently removes coarse dust particles with up to 90% collection efficiency, making it ideal as a primary dust collection system for industrial applications.',
-      'Low pressure drop of 50–100 mm WG ensures energy-efficient operation and supports high dust loading and elevated temperature conditions.',
-      'Maintenance-free design with high-efficiency cyclone and multicyclone options, suitable for industries such as cement, steel, foundries, woodworking, chemicals, and food processing.'
-    ]
-  },
+  // {
+  //   id: 5,
+  //   name: 'Cyclones',
+  //   category: 'custom-fabrication',
+  //   image: 'public/GVT_pic/cyclones.jpg',
+  //   bullets: [
+  //     'Efficiently removes coarse dust particles with up to 90% collection efficiency, making it ideal as a primary dust collection system for industrial applications.',
+  //     'Low pressure drop of 50–100 mm WG ensures energy-efficient operation and supports high dust loading and elevated temperature conditions.',
+  //     'Maintenance-free design with high-efficiency cyclone and multicyclone options, suitable for industries such as cement, steel, foundries, woodworking, chemicals, and food processing.'
+  //   ]
+  // },
   {
     id: 6,
     name: 'Dispersers Mixers',
@@ -114,23 +114,25 @@ export const products = [
     name: 'Filler Disc Blades 1000x1000',
     category: 'custom-fabrication',
     image: 'public/GVT_pic/filler-disc-blades-1000x1000.webp',
+    enquireLink: 'https://www.discbladesindia.com/',
+    enquireExternal: true,
     bullets: [
       'Manufactured from high-quality raw materials for accurate dimensions, reliable performance, and long service life.',
       'Available in various thicknesses and diameters, with rigorous quality testing to ensure consistent performance.',
       'Designed for minimal maintenance and easy installation and removal, making them convenient for industrial use.'
     ]
   },
-  {
-    id: 11,
-    name: 'Fluted Dise Blades 1000x1000',
-    category: 'custom-fabrication',
-    image: 'public/GVT_pic/fluted-dise-blades-1000x1000.webp',
-    bullets: [
-      'Designed to plough fields in a zigzag pattern, improving soil preparation and enhancing seed sowing efficiency.',
-      'Made from corrosion-resistant materials for long-lasting durability with minimal maintenance.',
-      'Easily attaches to tractors and effectively reaches difficult areas, ensuring maximum field coverage.'
-    ]
-  },
+  // {
+  //   id: 11,
+  //   name: 'Fluted Dise Blades 1000x1000',
+  //   category: 'custom-fabrication',
+  //   image: 'public/GVT_pic/fluted-dise-blades-1000x1000.webp',
+  //   bullets: [
+  //     'Designed to plough fields in a zigzag pattern, improving soil preparation and enhancing seed sowing efficiency.',
+  //     'Made from corrosion-resistant materials for long-lasting durability with minimal maintenance.',
+  //     'Easily attaches to tractors and effectively reaches difficult areas, ensuring maximum field coverage.'
+  //   ]
+  // },
   {
     id: 12,
     name: 'Frp Tanks',
@@ -267,17 +269,17 @@ export const products = [
       'Engineered for efficient heat transfer through radiation, convection, and conduction, ensuring improved process efficiency and long service life.'
     ]
   },
-  {
-    id: 24,
-    name: 'Rotary Melting Furnace',
-    category: 'custom-fabrication',
-    image: 'public/GVT_pic/rotary-melting-furnace.jpg',
-    bullets: [
-      'Manufactured for efficient melting of lead, aluminum, and antimony in demanding industrial applications.',
-      'Energy-efficient design delivers high performance while optimizing fuel consumption and productivity.',
-      'Available in customized specifications to meet diverse process, safety, and production requirements.'
-    ]
-  },
+  // {
+  //   id: 24,
+  //   name: 'Rotary Melting Furnace',
+  //   category: 'custom-fabrication',
+  //   image: 'public/GVT_pic/rotary-melting-furnace.jpg',
+  //   bullets: [
+  //     'Manufactured for efficient melting of lead, aluminum, and antimony in demanding industrial applications.',
+  //     'Energy-efficient design delivers high performance while optimizing fuel consumption and productivity.',
+  //     'Available in customized specifications to meet diverse process, safety, and production requirements.'
+  //   ]
+  // },
   {
     id: 25,
     name: 'Rounded Bottom Kettle For Cgl Flux Lines',
