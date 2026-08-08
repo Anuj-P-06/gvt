@@ -15,6 +15,12 @@ export function initHeroCarousel(root) {
   const textLayer = root.querySelector('[data-hero-text]')
   const progressBar = root.querySelector('[data-hero-progress]')
   const slideNumber = root.querySelector('[data-hero-number]')
+  const slideTotal = root.querySelector('[data-hero-total]')
+
+  if (slideTotal) {
+    const totalCount = heroSlides.length
+    slideTotal.textContent = totalCount < 10 ? `/0${totalCount}` : `/${totalCount}`
+  }
   const dotNav = root.querySelector('[data-hero-dots]')
   const prevBtn = root.querySelector('[data-hero-prev]')
   const nextBtn = root.querySelector('[data-hero-next]')
@@ -23,8 +29,14 @@ export function initHeroCarousel(root) {
   function renderBackground(index) {
     const slide = heroSlides[index]
     const el = document.createElement('div')
-    el.className = 'absolute inset-0 bg-cover bg-center w-full h-full'
+    const sizeClass = slide.bgSize ? '' : 'bg-cover'
+    const posClass = slide.bgPosition ? '' : 'bg-center'
+    el.className = `absolute inset-0 w-full h-full ${sizeClass} ${posClass}`.trim()
     el.style.backgroundImage = `url(${slide.bgImage})`
+    if (slide.bgSize) el.style.backgroundSize = slide.bgSize
+    if (slide.bgPosition) el.style.backgroundPosition = slide.bgPosition
+    if (slide.bgRepeat) el.style.backgroundRepeat = slide.bgRepeat
+    if (slide.bgColor) el.style.backgroundColor = slide.bgColor
     if (!prefersReducedMotion()) {
       el.classList.add('hero-bg-enter')
       requestAnimationFrame(() => {
