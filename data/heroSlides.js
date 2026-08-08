@@ -27,7 +27,7 @@ export const heroSlides = [
     bgImage: 'public/hero-3.jpeg',
     bgSize: 'cover',
     bgPosition: 'center 25%',
-    eyebrow: 'Pan-India Delivery',
+    eyebrow: '',
     heading: 'Storage Solutions Engineered to Scale.',
     subtext:
       'FRP, SS & MS tanks built to exact specification for ETP, WTP, Chemical and Pharma plants.',
@@ -38,7 +38,7 @@ export const heroSlides = [
   {
     id: 'pan-india',
     bgImage: 'public/hero-4.jpeg',
-    eyebrow: '500+ Projects Delivered',
+    eyebrow: '',
     heading: 'From Our Factory to Yours. Nationwide.',
     subtext:
       'By road, cargo or sea — we deliver precision-engineered equipment anywhere in India.',
@@ -49,7 +49,7 @@ export const heroSlides = [
   {
     id: 'heavy-fabrication',
     bgImage: 'public/hero-5.jpeg',
-    eyebrow: 'Advanced Industrial Manufacturing',
+    eyebrow: '',
     heading: 'Heavy Fabrication & Precision Welding.',
     subtext:
       'Heavy-duty structural welding, custom vessel engineering, and high-tolerance industrial fabrication.',
@@ -71,7 +71,7 @@ export const heroSlides = [
   {
     id: 'structural-components',
     bgImage: 'public/GVT_pic/hero-7.jpeg',
-    eyebrow: 'Heavy Structural Components',
+    eyebrow: '',
     heading: 'Precision Engineered Steel Components.',
     subtext:
       'High-strength steel ribs and custom structural fabrication built for extreme industrial durability.',
