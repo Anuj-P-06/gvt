@@ -1,7 +1,7 @@
 export const heroSlides = [
   {
     id: 'reactors',
-    bgImage: 'public/hero-1.jpg',
+    bgImage: 'public/GVT_pic/hero__1.jpeg',
     eyebrow: 'ISO 9001:2002 Certified',
     heading: 'Engineering Power. Industrial Precision.',
     subtext:
