@@ -3,7 +3,7 @@ export const heroSlides = [
     id: 'reactors',
     bgImage: 'public/GVT_pic/hero__1.jpeg',
     eyebrow: '',
-    heading: 'Rounded bottom kettle for hot dip galvaniztaion.',
+    heading: 'Rounded bottom kettle for hot dip galvanizataion.',
     subtext:
       "45+ years of expertise delivering custom Reactors, Kettles & Pressure Vessels for India's heaviest industries.",
     ctaText: 'Get a Free Quote',
@@ -15,9 +15,9 @@ export const heroSlides = [
     id: 'zinc-kettles',
     bgImage: 'public/hero-2.jpeg',
     eyebrow: '45+ Years of Excellence',
-    heading: 'Built for Cement & Steel Giants.',
+    heading: 'SS-Vesels for Chemical and Phramaceutical Industries',
     subtext:
-      "Custom Zinc Kettles and galvanizing equipment trusted by India's largest manufacturing plants.",
+      "Custom Sized Kettles for various applications",
     ctaText: 'Explore Zinc Kettles',
     ctaLink: 'products.html?cat=zinc-kettles',
     ctaExternal: false,
