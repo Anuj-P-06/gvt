@@ -289,17 +289,21 @@ section[data-hero-carousel] nav {
     display: none !important;
   }
 
-  /* Hero carousel text content */
+  /* Hero carousel text content on mobile */
+  section[data-hero-carousel] [data-hero-text-container],
+  section[data-hero-carousel] .absolute.bottom-10.left-6,
   section[data-hero-carousel] .absolute.bottom-8.left-6 {
-    bottom: 4.25rem !important;
+    bottom: 4.75rem !important;
     left: 1.25rem !important;
     right: 1.25rem !important;
     max-width: 100% !important;
   }
 
-  /* Hero carousel bottom controls */
+  /* Hero carousel bottom controls (progress bar, arrows, numbers) on mobile */
+  section[data-hero-carousel] [data-hero-controls],
+  section[data-hero-carousel] .absolute.bottom-8.right-6,
   section[data-hero-carousel] .absolute.bottom-6.right-6 {
-    bottom: 1rem !important;
+    bottom: 0.75rem !important;
     right: 1.25rem !important;
     left: 1.25rem !important;
     justify-content: space-between !important;
@@ -346,7 +350,7 @@ section[data-hero-carousel] nav {
 
 @media (max-width: 480px) {
   section[data-hero-carousel] {
-    height: 460px !important;
+    height: 500px !important;
   }
 }
 
