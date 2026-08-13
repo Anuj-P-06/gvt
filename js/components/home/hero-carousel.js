@@ -127,18 +127,20 @@ export function initHeroCarousel(root) {
     })
   }
 
-  heroSlides.forEach((_, index) => {
-    const dot = document.createElement('button')
-    dot.type = 'button'
-    dot.dataset.dot = String(index)
-    dot.className = 'rounded-full transition-all duration-300'
-    dot.style.width = '6px'
-    dot.style.height = index === 0 ? '24px' : '6px'
-    dot.style.backgroundColor = index === 0 ? '#295e8e' : 'rgba(255,255,255,0.3)'
-    dot.setAttribute('aria-label', `Go to slide ${index + 1}`)
-    dot.addEventListener('click', () => carousel.goTo(index))
-    dotNav?.appendChild(dot)
-  })
+  if (dotNav) {
+    heroSlides.forEach((_, index) => {
+      const dot = document.createElement('button')
+      dot.type = 'button'
+      dot.dataset.dot = String(index)
+      dot.className = 'rounded-full transition-all duration-300'
+      dot.style.width = '6px'
+      dot.style.height = index === 0 ? '24px' : '6px'
+      dot.style.backgroundColor = index === 0 ? '#295e8e' : 'rgba(255,255,255,0.3)'
+      dot.setAttribute('aria-label', `Go to slide ${index + 1}`)
+      dot.addEventListener('click', () => carousel.goTo(index))
+      dotNav.appendChild(dot)
+    })
+  }
 
   carousel.subscribe(swapSlide)
   swapSlide(0)

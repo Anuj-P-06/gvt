@@ -3,7 +3,7 @@ export const heroSlides = [
     id: 'reactors',
     bgImage: 'public/GVT_pic/hero__1.jpeg',
     eyebrow: '',
-    heading: 'Rounded bottom kettle for hot dip galvanizataion.',
+    heading: '',
     subtext:
       "45+ years of expertise delivering custom Reactors, Kettles & Pressure Vessels for India's heaviest industries.",
     ctaText: 'Get a Free Quote',
@@ -15,9 +15,9 @@ export const heroSlides = [
     id: 'zinc-kettles',
     bgImage: 'public/hero-2.jpeg',
     eyebrow: '45+ Years of Excellence',
-    heading: 'SS-Vesels for Chemical and Phramaceutical Industries',
+    heading: '',
     subtext:
-      "Custom Sized Kettles for various applications",
+      "SS-Vesels for Chemical and Phramaceutical Industries",
     ctaText: 'Explore Zinc Kettles',
     ctaLink: 'products.html?cat=zinc-kettles',
     ctaExternal: false,
@@ -28,9 +28,9 @@ export const heroSlides = [
     bgSize: 'cover',
     bgPosition: 'center 25%',
     eyebrow: '',
-    heading: 'Storage Solutions Engineered to Scale.',
+    heading: '',
     subtext:
-      'FRP, SS & MS tanks built to exact specification for ETP, WTP, Chemical and Pharma plants.',
+      'Inhouse Design Team with latest 2D and 3D softwares',
     ctaText: 'View Storage Tanks',
     ctaLink: 'products.html?cat=storage-tanks',
     ctaExternal: false,
@@ -39,9 +39,9 @@ export const heroSlides = [
     id: 'pan-india',
     bgImage: 'public/hero-4.jpeg',
     eyebrow: '',
-    heading: 'From Our Factory to Yours. Nationwide.',
+    heading: '',
     subtext:
-      'By road, cargo or sea — we deliver precision-engineered equipment anywhere in India.',
+      'From Our Factory to Yours. Nationwide.',
     ctaText: 'Get In Touch',
     ctaLink: 'contact.html',
     ctaExternal: false,
@@ -50,7 +50,7 @@ export const heroSlides = [
     id: 'heavy-fabrication',
     bgImage: 'public/hero-5.jpeg',
     eyebrow: '',
-    heading: 'Heavy Fabrication & Precision Welding.',
+    heading: '',
     subtext:
       'Heavy-duty structural welding, custom vessel engineering, and high-tolerance industrial fabrication.',
     ctaText: 'View Custom Fabrications',
@@ -61,7 +61,7 @@ export const heroSlides = [
     id: 'rotary-kilns',
     bgImage: 'public/hero-6.jpeg',
     eyebrow: 'State-of-the-Art Production',
-    heading: 'Rotary Kilns & Large Pressure Vessels.',
+    heading: '',
     subtext:
       'Turnkey manufacturing of heavy rotary kilns, industrial dryers, and large scale pressure equipment.',
     ctaText: 'Explore Products',
@@ -72,7 +72,7 @@ export const heroSlides = [
     id: 'structural-components',
     bgImage: 'public/GVT_pic/hero-7.jpeg',
     eyebrow: '',
-    heading: 'Precision Engineered Steel Components.',
+    heading: '',
     subtext:
       'High-strength steel ribs and custom structural fabrication built for extreme industrial durability.',
     ctaText: 'View All Products',
@@ -81,9 +81,9 @@ export const heroSlides = [
   },
   {
     id: 'plate-forming',
-    bgImage: 'public/GVT_pic/hero-8.jpeg',
+    bgImage: 'public/hero-8.png', 
     eyebrow: 'Custom Plate Bending & Forming',
-    heading: 'Heavy Duty Industrial Solutions.',
+    heading: '',
     subtext:
       'Tailor-made industrial equipment components fabricated to exact client engineering specs.',
     ctaText: 'Contact Us',
@@ -94,7 +94,7 @@ export const heroSlides = [
     id: 'precision-machining',
     bgImage: 'public/hero-9.png',
     eyebrow: 'High Precision Machining',
-    heading: 'Precision Machined Vessel Flanges.',
+    heading: '',
     subtext:
       'High-tolerance CNC turning, large-diameter flange machining, and hydrostatic pressure testing.',
     ctaText: 'Explore Engineering',
@@ -105,7 +105,7 @@ export const heroSlides = [
     id: 'hydraulic-pressing',
     bgImage: 'public/hero-10.png',
     eyebrow: 'Heavy Industrial Pressing',
-    heading: 'Heavy Hydraulic Pressing & Forming.',
+    heading: '',
     subtext:
       'High-tonnage hydraulic forming and custom fabrication for heavy steel structures.',
     ctaText: 'View Custom Fabrications',
@@ -116,7 +116,7 @@ export const heroSlides = [
     id: 'galvanizing-tanks',
     bgImage: 'public/hero-11.jpeg',
     eyebrow: 'Turnkey Equipment Delivery',
-    heading: 'Custom Galvanizing Tanks & Vessels.',
+    heading: '',
     subtext:
       'Robust galvanizing kettles and pickling tanks built for long service life and high chemical resistance.',
     ctaText: 'Explore Zinc Kettles',
@@ -127,22 +127,22 @@ export const heroSlides = [
     id: 'heavy-chambers',
     bgImage: 'public/hero-12.png',
     eyebrow: 'Heavy Industrial Chambers',
-    heading: 'Custom Steel Vessels & Heavy Fabrications.',
+    heading: '',
     subtext:
       'Heavy-gauge steel forming, custom chamber assembly, and industrial fabrication built for demanding environments.',
     ctaText: 'Explore Custom Fabrications',
     ctaLink: 'products.html?cat=custom-fabrication',
     ctaExternal: false,
   },
-  {
-    id: 'tank-fabrication',
-    bgImage: 'public/hero-13.jpeg',
-    eyebrow: 'Heavy Duty Tank Fabrication',
-    heading: 'Custom Steel Tank & Kettle Fabrication.',
-    subtext:
-      'Precision MIG/TIG welding, structural reinforcement, and quality-controlled tank manufacturing.',
-    ctaText: 'View Storage Tanks',
-    ctaLink: 'products.html?cat=storage-tanks',
-    ctaExternal: false,
-  },
+  // {
+  //   id: 'tank-fabrication',
+  //   bgImage: 'public/hero-13.jpeg',
+  //   eyebrow: 'Heavy Duty Tank Fabrication',
+  //   heading: '',
+  //   subtext:
+  //     'Precision MIG/TIG welding, structural reinforcement, and quality-controlled tank manufacturing.',
+  //   ctaText: 'View Storage Tanks',
+  //   ctaLink: 'products.html?cat=storage-tanks',
+  //   ctaExternal: false,
+  // },
 ]
