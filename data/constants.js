@@ -3,9 +3,7 @@ export const WHATSAPP_LINK =
 
 export const COMPANY = {
   name: 'GVT India Private Limited',
-  phone: `+91-9999775755
-
-+4420-3289-6007`,
-  email: 'exports@gvtgroup.net',
+  phone: '+91-9999775755, +91-8178195655',
+  email: 'info@gvtgroup.net',
   address: 'D-12, Meerut Road, Industrial Area, Ghaziabad(U.P.), India – 201002',
 }

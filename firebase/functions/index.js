@@ -17,7 +17,7 @@ exports.sendEnquiryEmail = functions.firestore
     
     // Notification to admin
     const adminMsg = {
-      to: 'exports@gvtgroup.net',
+      to: 'info@gvtgroup.net',
       from: 'noreply@gvtengineering.in',
       subject: `New Enquiry from ${data.name}`,
       text: `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'N/A'}\nMessage: ${data.message}\nSource: ${data.source}`,
@@ -35,15 +35,13 @@ exports.sendEnquiryEmail = functions.firestore
     // Auto-reply to customer
     const customerMsg = {
       to: data.email,
-      from: 'exports@gvtgroup.net',
+      from: 'info@gvtgroup.net',
       subject: 'We have received your enquiry - GVT Engineering',
       text: `Hello ${data.name},\n\nThank you for reaching out to GVT Engineering. We have received your enquiry and our team will get back to you within 24 hours.\n\nBest Regards,\nGVT Engineering Team`,
       html: `
         <p>Hello ${data.name},</p>
         <p>Thank you for reaching out to GVT Engineering. We have received your enquiry regarding your project and our engineering team will review it and get back to you within 24 hours.</p>
-        <p>If you need immediate assistance, please reply to this email or call us at +91-9999775755
-
-+4420-3289-6007.</p>
+        <p>If you need immediate assistance, please reply to this email or call us at +91-9999775755 / +91-8178195655.</p>
         <br>
         <p>Best Regards,</p>
         <p><strong>GVT Engineering Team</strong></p>

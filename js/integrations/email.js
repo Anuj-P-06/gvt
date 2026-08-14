@@ -27,10 +27,13 @@ export function initContactForm() {
       return;
     }
 
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const phone   = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const name        = document.getElementById('name').value.trim();
+    const company     = document.getElementById('company')?.value.trim() || '';
+    const email       = document.getElementById('email').value.trim();
+    const countryCode = document.getElementById('country-code')?.value || '+91';
+    const rawPhone    = document.getElementById('phone').value.trim();
+    const phone       = rawPhone ? `${countryCode} ${rawPhone}` : 'Not provided';
+    const message     = document.getElementById('message').value.trim();
 
     // Disable button while sending
     const originalContent = submitBtn.innerHTML;
@@ -40,10 +43,11 @@ export function initContactForm() {
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         from_name:    name,
+        company_name: company || 'Not provided',
         from_email:   email,
-        phone:        phone || 'Not provided',
-        message:      message,
-        to_email:     'exports@gvtgroup.net',
+        phone:        phone,
+        message:      company ? `[Company: ${company}]\n\n${message}` : message,
+        to_email:     'info@gvtgroup.net',
         reply_to:     email,
       });
 
@@ -53,7 +57,7 @@ export function initContactForm() {
       const status = error?.status ?? 'unknown';
       const text   = error?.text   ?? JSON.stringify(error);
       console.error('EmailJS error — status:', status, '| text:', text);
-      alert(`Email failed (${status}): ${text}\n\nPlease email us directly at exports@gvtgroup.net`);
+      alert(`Email failed (${status}): ${text}\n\nPlease email us directly at info@gvtgroup.net`);
 
     } finally {
       submitBtn.innerHTML = originalContent;

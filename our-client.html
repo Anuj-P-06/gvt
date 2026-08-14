@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="public/gvt-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GVT Engineering Our Clients — Proudly partnering with leading global organizations across steel, energy, power, petrochemical, and heavy engineering industries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <title>Our Client | GVT India</title>
+</head>
+
+<body class="min-h-screen bg-white">
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+
+  <!-- Mobile Nav Drawer -->
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav-link">
+      <span>HOME</span>
+      <span class="link-dot"></span>
+    </a>
+    <a href="about.html" class="mobile-nav-link">
+      <span>ABOUT US</span>
+      <span class="link-dot"></span>
+    </a>
+    <div class="mobile-nav-products-container">
+      <div class="mobile-nav-link">
+        <a href="products.html" class="flex-1 text-inherit">
+          <span>PRODUCTS</span>
+        </a>
+        <button type="button" data-mobile-dropdown-toggle class="p-1 rounded text-white/70 hover:text-white" aria-label="Toggle products menu">
+          <svg class="h-4 w-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <div data-mobile-sub-menu class="mobile-sub-menu">
+        <a href="products.html?cat=reactors" class="mobile-sub-link">
+          <span>Reactor & Pressure Vessels</span>
+        </a>
+        <a href="products.html?cat=zinc-kettles" class="mobile-sub-link">
+          <span>Zinc Kettle</span>
+        </a>
+        <a href="products.html?cat=storage-tanks" class="mobile-sub-link">
+          <span>Storage Tank</span>
+        </a>
+        <a href="products.html?cat=heat-exchangers" class="mobile-sub-link">
+          <span>Heat Exchanger</span>
+        </a>
+        <a href="products.html?cat=custom-fabrication" class="mobile-sub-link">
+          <span>Custom Fabrications</span>
+        </a>
+      </div>
+    </div>
+    <a href="our-client.html" class="mobile-nav-link active-page" aria-current="page">
+      <span>OUR CLIENT</span>
+      <span class="link-dot"></span>
+    </a>
+    <a href="gallery.html" class="mobile-nav-link">
+      <span>GALLERY</span>
+      <span class="link-dot"></span>
+    </a>
+  </nav>
+
+  <!-- Sticky Header -->
+  <header
+    class="sticky top-0 z-40 w-full border-t-4 border-[#0066C4] bg-white px-6 py-[0.825rem] shadow-md backdrop-blur-md md:px-12 md:py-[1.1rem] lg:px-16">
+    <nav class="mx-auto flex max-w-[1600px] items-center justify-between" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 py-0.5 group shrink-0" aria-label="GVT INDIA Home">
+        <img src="public/gvt-logo.png" alt="GVT Logo" class="h-14 w-14 sm:h-[4.2rem] sm:w-[4.2rem] md:h-[4.8rem] md:w-[4.8rem] lg:h-24 lg:w-24 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+        <img src="public/gvt-india-text.png" alt="GVT INDIA - Providing Engineering Solutions" class="h-12 sm:h-14 md:h-[4.2rem] lg:h-[4.8rem] w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <div class="hidden items-center gap-4 lg:flex">
+        <a href="about.html" class="nav-top-link">ABOUT US</a>
+        <div class="nav-dropdown">
+          <a href="products.html"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm lg:text-[0.9375rem] font-bold uppercase tracking-wider text-slate-900 transition-colors hover:text-[#0066C4] group"
+            aria-expanded="false" aria-haspopup="true">
+            <span>PRODUCTS</span>
+            <svg class="h-4 w-4 text-slate-500 transition-colors duration-200 group-hover:text-[#0066C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <div class="space-y-0.5">
+              <a href="products.html?cat=reactors" class="nav-dropdown-item">
+                <span>Reactor & Pressure Vessels</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=zinc-kettles" class="nav-dropdown-item">
+                <span>Zinc Kettle</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=storage-tanks" class="nav-dropdown-item">
+                <span>Storage Tank</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=heat-exchangers" class="nav-dropdown-item">
+                <span>Heat Exchanger</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=custom-fabrication" class="nav-dropdown-item">
+                <span>Custom Fabrications</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html" class="nav-dropdown-item">
+                <span>View All Products</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="our-client.html" class="nav-top-link active-nav" aria-current="page">OUR CLIENT</a>
+        <a href="gallery.html" class="nav-top-link">GALLERY</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html"
+          class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-md md:px-6 md:py-3 md:text-base">Get
+          In Touch<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" class="cta-arrow-icon" aria-hidden="true">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg></a>
+        <button id="mobile-menu-btn" class="hamburger-btn lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+          <div class="hamburger-bars">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </div>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="relative mx-4 mt-4 overflow-hidden rounded-3xl bg-[#FDF5E6] max-w-[1600px] md:mx-auto md:mt-6">
+      <div class="grid items-stretch lg:grid-cols-12 min-h-[380px]">
+        <!-- Left Text Container -->
+        <div class="lg:col-span-5 p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-[#FDF5E6]">
+          <span class="inline-block px-3 py-1 mb-4 text-xs font-bold uppercase tracking-widest text-[#F25F22] bg-[#F25F22]/10 rounded-full w-fit">Global Partnerships</span>
+          <h1 class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-[#2B2B2B] tracking-tight leading-none">
+            OUR CLIENTS
+          </h1>
+          <p class="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed font-sans max-w-md">
+            We are proud to partner with leading organisations across industries, building long-term relationship through trust, quality, and performance.
+          </p>
+        </div>
+
+        <!-- Right Image Container -->
+        <div class="lg:col-span-7 relative min-h-[300px] lg:min-h-full">
+          <img src="public/jas.jpg" alt="GVT Engineering Operations" class="absolute inset-0 h-full w-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#FDF5E6]/40 via-transparent to-transparent lg:hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Clientele Roster Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-12 bg-slate-50/50">
+      <div class="mx-auto max-w-[1500px]">
+        <!-- Main Section Title -->
+        <div class="text-center lg:text-left mb-12">
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-[#1A1A1A] leading-tight max-w-4xl">
+            WE FEEL PROUD TO ASSOCIATE OURSELVES WITH OUR PRESTIGIOUS CLIENTELE
+          </h2>
+          <div class="mt-3 h-1.5 w-24 bg-[#0066C4] rounded-full mx-auto lg:mx-0"></div>
+        </div>
+
+
+
+        <!-- Client Cards Grid featuring Images from public/clientele -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6" id="clientele-grid">
+
+          <!-- 1. ArcelorMittal -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/Arcelormittal-logo.svg.webp" alt="ArcelorMittal" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">ArcelorMittal</p>
+          </div>
+
+          <!-- 2. JSW Steel -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/jsw-steel-logo-png_seeklogo-630167.png" alt="JSW Steel" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">JSW Steel</p>
+          </div>
+
+          <!-- 3. Nippon Steel -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/nippon-steel-logo-png_seeklogo-290917.png" alt="Nippon Steel" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">NIPPON STEEL</p>
+          </div>
+
+          <!-- 4. Tata Projects -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/Tata-Projects-logo-media-kit.png" alt="Tata Projects" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Tata Projects</p>
+          </div>
+
+          <!-- 5. Doosan -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/Doosan_logo.svg.webp" alt="Doosan" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Doosan</p>
+          </div>
+
+          <!-- 6. Essar -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/Essar_logo.svg.webp" alt="Essar" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Essar</p>
+          </div>
+
+          <!-- 7. I+W Group -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/I+W GROUP.png" alt="I+W Group" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">I+W Group</p>
+          </div>
+
+          <!-- 8. Jubilant Organosys -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/Jubilant.webp" alt="Jubilant Organosys" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Jubilant Organosys</p>
+          </div>
+
+          <!-- 9. USCO -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/USCO.png" alt="USCO" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">USCO</p>
+          </div>
+
+          <!-- 10. Abul Khair Group -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/abul khair group.jpeg" alt="Abul Khair Group" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Abul Khair Group</p>
+          </div>
+
+          <!-- 11. Assomac Group -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/assomac.png" alt="Assomac Group" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Assomac Group</p>
+          </div>
+
+          <!-- 12. Bansal Group -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/bansal we wire the world.jpeg" alt="Bansal Group" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Bansal Group</p>
+          </div>
+
+          <!-- 13. BGR Energy Systems -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/bgr-energy-systems-limited-logo-png_seeklogo-205631.png" alt="BGR Energy Systems" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">BGR Energy Systems</p>
+          </div>
+
+          <!-- 14. BSBK Engineers -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/bsbk-engineers-squarelogo-1475071654897.webp" alt="BSBK Engineers" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">BSBK Engineers</p>
+          </div>
+
+          <!-- 15. CEW (City Engineering Works) -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/cew.jpeg" alt="City Engineering Works (CEW)" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">City Engineering Works (CEW)</p>
+          </div>
+
+          <!-- 16. DCM Shriram -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/dcm shriram.png" alt="DCM Shriram" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">DCM Shriram</p>
+          </div>
+
+          <!-- 17. DRDO -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/drdo.jpeg" alt="DRDO LASTEC" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">DRDO (LASTEC)</p>
+          </div>
+
+          <!-- 18. Greenply -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/greenply.jpg" alt="Greenply" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Greenply Industries</p>
+          </div>
+
+          <!-- 19. ITD Cem -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/itd-cem-logo-png_seeklogo-366681.png" alt="ITD Cem" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">ITD Cem</p>
+          </div>
+
+          <!-- 20. John Cockerill -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/john-cockerill-logo.png" alt="John Cockerill" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">John Cockerill</p>
+          </div>
+
+          <!-- 21. Juneja Wires -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/juneja.jpeg" alt="Juneja Wires" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Juneja Wires Private Limited</p>
+          </div>
+
+          <!-- 22. Ladco -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/ladco.avif" alt="Ladco" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Ladco</p>
+          </div>
+
+          <!-- 23. Lanco -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/lanco_anpara_power_limited_cover.jpeg" alt="Lanco Power" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">LANCO Power</p>
+          </div>
+
+          <!-- 24. Macawber -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/macawber.jpeg" alt="Macawber" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Macawber</p>
+          </div>
+
+          <!-- 25. Om Infra -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/om Infra.jpeg" alt="Om Infra" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Om Infra Limited</p>
+          </div>
+
+          <!-- 26. SEPC Power -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/sepc_power_private_limited_logo.jpeg" alt="SEPC Power" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">SEPC Power Private Limited</p>
+          </div>
+
+          <!-- 27. Shah Alloys -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/shah-alloys-ltd--600.png" alt="Shah Alloys" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Shah Alloys Limited</p>
+          </div>
+
+          <!-- 28. Toshiba -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/toshiba-leading-innovation-logo.svg" alt="Toshiba" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Toshiba</p>
+          </div>
+
+          <!-- 29. Uflex -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/uflex.png" alt="Uflex" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">UFLEX</p>
+          </div>
+
+          <!-- 30. Client Image 1516904158583 -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/1516904158583.jpeg" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Industrial Partner</p>
+          </div>
+
+          <!-- 31. Client Image 3419122e5d1ba87b1eadb51740ca5a82 -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/3419122e5d1ba87b1eadb51740ca5a82.jpg" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Energy & Power Partner</p>
+          </div>
+
+          <!-- 32. Client Image 92896786 -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/92896786.cms" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Steel & Heavy Fabrication Partner</p>
+          </div>
+
+          <!-- 33. Client Screenshot 101642 -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/Screenshot 2026-08-14 101642.png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Infrastructure Partner</p>
+          </div>
+
+          <!-- 34. Client Screenshot 102948 -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/Screenshot 2026-08-14 102948.png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Power Sector Partner</p>
+          </div>
+
+          <!-- 35. Client Image thumb-ea38889b -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/thumb-ea38889b-a0c0-4902-8b5a-50bd7169dad6.jpeg" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Chemical & Process Partner</p>
+          </div>
+
+          <!-- 36. Images.png -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/images.png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Metal Industries Partner</p>
+          </div>
+
+          <!-- 37. Images (1).png -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <img src="public/clientele/images (1).png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Engineering Partner</p>
+          </div>
+
+          <!-- 38. Images (2).png -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <img src="public/clientele/images (2).png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Thermal & Hydro Partner</p>
+          </div>
+
+          <!-- 39. Images (3).png -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <img src="public/clientele/images (3).png" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Process Equipment Partner</p>
+          </div>
+
+          <!-- 40. Images.jpeg -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <img src="public/clientele/images.jpeg" alt="Client Logo" class="client-img" loading="lazy" />
+            </div>
+            <p class="client-name">Heavy Industrial Partner</p>
+          </div>
+
+          <!-- 41. TATA STEEL -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto text-[#00529C]" viewBox="0 0 160 45" fill="currentColor">
+                <path d="M15 10h130v6H85v25H70V16H15v-6z"/>
+                <text x="80" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="22" text-anchor="middle" fill="#00529C" letter-spacing="2">TATA STEEL</text>
+              </svg>
+            </div>
+            <p class="client-name">Tata Steel</p>
+          </div>
+
+          <!-- 42. ADANI -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 150 45" fill="none">
+                <text x="75" y="32" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="28" fill="#1C5D99" text-anchor="middle" letter-spacing="-1">adani</text>
+                <circle cx="125" cy="16" r="4" fill="#E65100"/>
+              </svg>
+            </div>
+            <p class="client-name">Adani Group</p>
+          </div>
+
+          <!-- 43. DAELIM -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <text x="80" y="32" font-family="Impact, Arial Black, sans-serif" font-size="26" fill="#00338D" text-anchor="middle" letter-spacing="2">DAELIM</text>
+              </svg>
+            </div>
+            <p class="client-name">Daelim</p>
+          </div>
+
+          <!-- 44. NTPC -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <rect x="15" y="8" width="130" height="28" rx="4" fill="#0080FF"/>
+                <text x="80" y="28" font-family="Arial, sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">NTPC</text>
+              </svg>
+            </div>
+            <p class="client-name">NTPC (National Thermal Power Corp)</p>
+          </div>
+
+          <!-- 45. THERMAX -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <path d="M25 8H45V16H38V36H32V16H25V8Z" fill="#ED1C24"/>
+                <text x="95" y="32" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="#222">THERMAX</text>
+              </svg>
+            </div>
+            <p class="client-name">Thermax</p>
+          </div>
+
+          <!-- 46. BALCO -->
+          <div class="client-card" data-category="steel">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <circle cx="30" cy="22" r="14" stroke="#004B87" stroke-width="4" fill="none"/>
+                <text x="30" y="28" font-family="Arial" font-weight="900" font-size="18" fill="#004B87" text-anchor="middle">B</text>
+                <text x="100" y="29" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#004B87">balco</text>
+              </svg>
+            </div>
+            <p class="client-name">BALCO (Bharat Aluminium Co)</p>
+          </div>
+
+          <!-- 47. HYUNDAI ENGINEERING -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 180 45" fill="none">
+                <path d="M15 28L25 10L35 28H15Z" fill="#00A651"/>
+                <text x="110" y="24" font-family="Arial, sans-serif" font-weight="900" font-size="15" fill="#003366" text-anchor="middle">HYUNDAI</text>
+                <text x="110" y="35" font-family="Arial, sans-serif" font-weight="700" font-size="8" fill="#555555" text-anchor="middle">ENGINEERING</text>
+              </svg>
+            </div>
+            <p class="client-name">Hyundai Engineering</p>
+          </div>
+
+          <!-- 48. ALSTOM -->
+          <div class="client-card" data-category="epc">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <text x="80" y="32" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="24" fill="#002B66" text-anchor="middle">ALST<tspan fill="#E31837">O</tspan>M</text>
+              </svg>
+            </div>
+            <p class="client-name">Alstom</p>
+          </div>
+
+          <!-- 49. TORRENT POWER -->
+          <div class="client-card" data-category="power">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 170 45" fill="none">
+                <text x="85" y="24" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="#1C3F94" text-anchor="middle">TORRENT</text>
+                <text x="85" y="36" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#00A859" text-anchor="middle" letter-spacing="2">POWER</text>
+              </svg>
+            </div>
+            <p class="client-name">Torrent Power</p>
+          </div>
+
+          <!-- 50. DABUR -->
+          <div class="client-card" data-category="process">
+            <div class="client-logo-box">
+              <svg class="h-10 w-auto" viewBox="0 0 160 45" fill="none">
+                <path d="M25 32C20 20 35 10 30 8C35 15 45 20 35 32Z" fill="#2E7D32"/>
+                <text x="90" y="26" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="22" fill="#1B5E20">Dabur</text>
+                <text x="90" y="36" font-family="Arial, sans-serif" font-style="italic" font-size="9" fill="#E65100">Celebrate Life!</text>
+              </svg>
+            </div>
+            <p class="client-name">Dabur India</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout Section -->
+    <section class="py-16 bg-slate-900 text-white mx-4 mb-16 rounded-3xl max-w-[1400px] md:mx-auto px-6 sm:px-10 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-ind-orange/20 via-transparent to-transparent pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl font-bold md:text-5xl tracking-tight">Partner With GVT Engineering</h2>
+        <p class="mt-6 text-base md:text-lg text-slate-300 leading-relaxed">
+          Join our distinguished list of global partners. We deliver custom-designed industrial equipment, precision manufacturing, and heavy fabrication engineered for your exact operational requirements.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="contact.html" class="cta-btn inline-flex items-center gap-2 rounded-full bg-ind-orange px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-lg">
+            <span>Get In Touch</span>
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mx-4 mb-4 rounded-2xl bg-ind-black pt-16 pb-8 text-white md:mx-6 md:mb-6">
+    <div class="px-6 md:px-10">
+      <div class="grid gap-12 md:grid-cols-3">
+        <div>
+          <h2 class="font-display text-3xl font-bold leading-tight md:text-4xl">Let's Build The Future Together</h2>
+          <a href="contact.html" class="cta-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Get Started</a>
+        </div>
+        <div>
+          <h3 class="label-text mb-4 text-xs text-grey-light">Contact</h3>
+          <ul class="space-y-3 text-sm text-grey-light">
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="mt-0.5 shrink-0 text-ind-orange" aria-hidden="true">
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>D-12, Meerut Road, Industrial Area,Ghaziabad(U.P.), India – 201002</li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="shrink-0 text-ind-orange" aria-hidden="true">
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+              </svg><a href="tel:+919999775755" class="hover:text-white">+91-9999775755</a> / <a href="tel:+918178195655" class="hover:text-white">+91-8178195655</a></li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="shrink-0 text-ind-orange" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg><a href="mailto:info@gvtgroup.net" class="hover:text-white">info@gvtgroup.net</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap items-start gap-10 sm:gap-14 md:gap-16">
+          <div>
+            <h3 class="label-text mb-4 text-xs text-grey-light">Follow Us</h3>
+            <div class="flex gap-3"><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg></a></div>
+          </div>
+
+          <!-- Made by VINEB Digital -->
+          <div class="flex flex-col items-start select-none">
+            <h3 class="label-text mb-4 text-xs text-grey-light">made by</h3>
+            <div class="flex flex-col leading-none font-sans">
+              <span class="font-bold text-[13px] uppercase"
+                style="color: #9FE814; letter-spacing: 0.18em;">VINEB</span>
+              <span class="font-semibold text-xl tracking-tight text-white mt-0.5">Digital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border-dark pt-6 text-xs text-grey-light md:flex-row">
+        <p>© <span data-current-year>2026</span> GVT India Private Limited. All rights reserved.</p>
+        <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
+            href="about.html" class="hover:text-white">About</a><a href="products.html"
+            class="hover:text-white">Products</a><a href="our-client.html" class="hover:text-white">Our Client</a><a href="contact.html" class="hover:text-white">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float container -->
+  <div id="whatsapp-float-container"></div>
+
+  <style>
+    .client-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.875rem;
+      padding: 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .client-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -6px rgba(0, 102, 196, 0.14), 0 4px 8px -2px rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 102, 196, 0.4);
+    }
+
+    .client-logo-box {
+      width: 100%;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+      padding: 0.375rem;
+      overflow: hidden;
+    }
+
+    .client-img {
+      max-height: 56px;
+      max-width: 88%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .client-card:hover .client-img {
+      transform: scale(1.06);
+    }
+
+    .client-name {
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.25;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .client-card:hover .client-name {
+      color: #0066C4;
+    }
+
+    .client-tab-btn.active {
+      background-color: #0066C4 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(0, 102, 196, 0.25);
+    }
+  </style>
+
+  <script type="module" src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabBtns = document.querySelectorAll('.client-tab-btn');
+      const cards = document.querySelectorAll('.client-card');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

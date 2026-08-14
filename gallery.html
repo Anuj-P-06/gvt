@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="public/gvt-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GVT Engineering Product Gallery — Comprehensive showcase of CGL Line Kettles, Spares, Autoclaves, Inner Covers, Muffles & Heavy SS/MS Fabrications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <title>Product Gallery | GVT India</title>
+</head>
+
+<body class="min-h-screen bg-white">
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+
+  <!-- Mobile Nav Drawer -->
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav-link">
+      <span>HOME</span>
+      <span class="link-dot"></span>
+    </a>
+    <a href="about.html" class="mobile-nav-link">
+      <span>ABOUT US</span>
+      <span class="link-dot"></span>
+    </a>
+    <div class="mobile-nav-products-container">
+      <div class="mobile-nav-link">
+        <a href="products.html" class="flex-1 text-inherit">
+          <span>PRODUCTS</span>
+        </a>
+        <button type="button" data-mobile-dropdown-toggle class="p-1 rounded text-white/70 hover:text-white" aria-label="Toggle products menu">
+          <svg class="h-4 w-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <div data-mobile-sub-menu class="mobile-sub-menu">
+        <a href="products.html?cat=reactors" class="mobile-sub-link">
+          <span>Reactor & Pressure Vessels</span>
+        </a>
+        <a href="products.html?cat=zinc-kettles" class="mobile-sub-link">
+          <span>Zinc Kettle</span>
+        </a>
+        <a href="products.html?cat=storage-tanks" class="mobile-sub-link">
+          <span>Storage Tank</span>
+        </a>
+        <a href="products.html?cat=heat-exchangers" class="mobile-sub-link">
+          <span>Heat Exchanger</span>
+        </a>
+        <a href="products.html?cat=custom-fabrication" class="mobile-sub-link">
+          <span>Custom Fabrications</span>
+        </a>
+      </div>
+    </div>
+    <a href="our-client.html" class="mobile-nav-link">
+      <span>OUR CLIENT</span>
+      <span class="link-dot"></span>
+    </a>
+    <a href="gallery.html" class="mobile-nav-link active-page" aria-current="page">
+      <span>GALLERY</span>
+      <span class="link-dot"></span>
+    </a>
+  </nav>
+
+  <!-- Sticky Header -->
+  <header
+    class="sticky top-0 z-40 w-full border-t-4 border-[#0066C4] bg-white px-6 py-[0.825rem] shadow-md backdrop-blur-md md:px-12 md:py-[1.1rem] lg:px-16">
+    <nav class="mx-auto flex max-w-[1600px] items-center justify-between" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 py-0.5 group shrink-0" aria-label="GVT INDIA Home">
+        <img src="public/gvt-logo.png" alt="GVT Logo" class="h-14 w-14 sm:h-[4.2rem] sm:w-[4.2rem] md:h-[4.8rem] md:w-[4.8rem] lg:h-24 lg:w-24 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+        <img src="public/gvt-india-text.png" alt="GVT INDIA - Providing Engineering Solutions" class="h-12 sm:h-14 md:h-[4.2rem] lg:h-[4.8rem] w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <div class="hidden items-center gap-4 lg:flex">
+        <a href="about.html" class="nav-top-link">ABOUT US</a>
+        <div class="nav-dropdown">
+          <a href="products.html"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm lg:text-[0.9375rem] font-bold uppercase tracking-wider text-slate-900 transition-colors hover:text-[#0066C4] group"
+            aria-expanded="false" aria-haspopup="true">
+            <span>PRODUCTS</span>
+            <svg class="h-4 w-4 text-slate-500 transition-colors duration-200 group-hover:text-[#0066C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <div class="space-y-0.5">
+              <a href="products.html?cat=reactors" class="nav-dropdown-item">
+                <span>Reactor & Pressure Vessels</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=zinc-kettles" class="nav-dropdown-item">
+                <span>Zinc Kettle</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=storage-tanks" class="nav-dropdown-item">
+                <span>Storage Tank</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=heat-exchangers" class="nav-dropdown-item">
+                <span>Heat Exchanger</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html?cat=custom-fabrication" class="nav-dropdown-item">
+                <span>Custom Fabrications</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="products.html" class="nav-dropdown-item">
+                <span>View All Products</span>
+                <svg class="item-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="our-client.html" class="nav-top-link">OUR CLIENT</a>
+        <a href="gallery.html" class="nav-top-link active-nav" aria-current="page">GALLERY</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html"
+          class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-md md:px-6 md:py-3 md:text-base">Get
+          In Touch<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" class="cta-arrow-icon" aria-hidden="true">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg></a>
+        <button id="mobile-menu-btn" class="hamburger-btn lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+          <div class="hamburger-bars">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </div>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section
+      class="page-hero-section relative mx-4 mt-4 flex min-h-[280px] max-w-[1600px] items-end overflow-hidden rounded-3xl bg-ind-black p-8 md:mx-auto md:mt-6 md:p-12"
+      style="background-image: url('public/GVT_pic/cgl-zinc-kettle.jpg'); background-size: cover; background-position: center;">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/75 to-slate-950/40"></div>
+      <div class="relative z-10 max-w-4xl">
+        <nav class="mb-4 flex items-center gap-1 text-xs text-white/70 font-medium" aria-label="Breadcrumb">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+          <span class="text-white">Product Gallery</span>
+        </nav>
+        <span class="inline-block px-3.5 py-1 mb-3 text-xs font-semibold uppercase tracking-wider text-[#0066C4] bg-white/95 backdrop-blur-sm rounded-full shadow-sm">Industrial Showcase</span>
+        <h1 class="font-display text-3xl font-bold text-white md:text-5xl lg:text-6xl tracking-tight">
+          PRODUCT GALLERY
+        </h1>
+        <p class="mt-4 text-base text-white/85 md:text-lg leading-relaxed max-w-3xl">
+          Comprehensive visual portfolio of custom-built CGL line kettles, spares, autoclaves, inner covers, muffles, and heavy SS/MS fabrications manufactured by GVT Engineering.
+        </p>
+      </div>
+    </section>
+
+    <!-- Category Filter Bar -->
+    <section class="pt-12 pb-6 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-2 border-b border-slate-200 pb-6">
+        <button type="button" data-gallery-filter="all" class="gallery-tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-[#0066C4] text-white shadow-sm">
+          All Products
+        </button>
+        <button type="button" data-gallery-filter="cgl-kettles" class="gallery-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          CGL & Galvanizing Kettles
+        </button>
+        <button type="button" data-gallery-filter="spares" class="gallery-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          CGL Spares
+        </button>
+        <button type="button" data-gallery-filter="autoclaves" class="gallery-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          Autoclaves & Pressure Vessels
+        </button>
+        <button type="button" data-gallery-filter="covers" class="gallery-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          Inner Covers & Muffles
+        </button>
+        <button type="button" data-gallery-filter="fabrication" class="gallery-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          General SS & MS Fabrication
+        </button>
+      </div>
+    </section>
+
+        <!-- Main Gallery Grid -->
+    <section class="py-8 pb-24 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
+      
+      <!-- ============================================ -->
+      <!-- KETTLES OF CGL LINES (Page 6) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="cgl-kettles">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-[#0066C4] pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Kettles of CGL Lines
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img1.jpg" data-title="Kettles of CGL Lines - Heavy Galvanizing Pot">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img1.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Heavy duty CGL galvanizing kettle with side stiffeners</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img2.jpg" data-title="Kettles of CGL Lines - Side Heat Protection">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img2.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Welded heating zone plates & refractory mounting</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img3.jpg" data-title="Kettles of CGL Lines - Custom Fabricated Kettle">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img3.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Heavy plate construction for continuous galvanizing</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img4.jpg" data-title="Kettles of CGL Lines - Transport Mounted Zinc Kettle">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img4.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Securely braced CGL zinc pot ready for shipping</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img5.jpg" data-title="Kettles of CGL Lines - Protective Wrapped Kettle">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img5.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Seals & protective insulation wrap before delivery</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p6_img6.jpg" data-title="Kettles of CGL Lines - High-Capacity CGL Pot">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p6_img6.jpg" alt="Kettles of CGL Lines" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles of CGL Lines</h3>
+              <p class="gallery-sub">Custom CGL zinc pot on shop floor after final test</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- KETTLES ROUNDED BOTTOM - EURO DESIGN (Page 7) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="cgl-kettles">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-ind-orange pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Kettles Rounded Bottom – Euro Design Side Formed
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img1.jpg" data-title="Euro Design Side Formed Kettle - Shipping Flatbed">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img1.jpg" alt="Euro Design Side Formed Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Euro Design Side Formed Kettle</h3>
+              <p class="gallery-sub">Cold-bended rounded bottom kettle on dispatch skid</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img2.jpg" data-title="Euro Design Rounded Bottom Kettle - Red Oxide Primer">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img2.jpg" alt="Euro Design Kettle Primer" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Euro Design Rounded Bottom Kettle</h3>
+              <p class="gallery-sub">Red-oxide coated zinc pot with top lifting lugs</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img3.jpg" data-title="Euro Design Galvanizing Kettle - Heavy Duty Shell">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img3.jpg" alt="Euro Design Galvanizing Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Euro Design Side Formed Kettle</h3>
+              <p class="gallery-sub">Seamless side-formed radius to minimize corner erosion</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img4.jpg" data-title="Euro Design Side Formed Kettles - Trailer Transport">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img4.jpg" alt="Trailer Loaded Galvanizing Kettles" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Euro Design Side Formed Kettles</h3>
+              <p class="gallery-sub">Dual high-capacity zinc pots loaded for plant dispatch</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img5.jpg" data-title="Rounded Bottom Zinc Pot - Fabrication Stage">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img5.jpg" alt="Rounded Bottom Zinc Pot" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Rounded Bottom Zinc Pot</h3>
+              <p class="gallery-sub">Heavy plate assembly in workshop bay</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p7_img6.jpg" data-title="Euro Design Side Formed - Final Inspection">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p7_img6.jpg" alt="Euro Design Side Formed" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Euro Design Side Formed Kettle</h3>
+              <p class="gallery-sub">Vertical plate fitting and seam inspection</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- KETTLES FOR TUBE/STRUCTURE GALVANIZING (Page 8) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="cgl-kettles">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-emerald-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Kettles for Tube / Structure Galvanizing
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p8_img1.jpg" data-title="Kettles for Tube/Structure Galvanizing - Corner Detail">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p8_img1.jpg" alt="Tube Galvanizing Kettle Corner" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Kettles for Tube / Structure Galvanizing</h3>
+              <p class="gallery-sub">Superior SAIL/AMNS plate construction with low carbon/silicon</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p8_img2.jpg" data-title="Tube Galvanizing Kettle - Precision Welding">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p8_img2.jpg" alt="Welding Tube Galvanizing Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Tube Galvanizing Kettle Welding</h3>
+              <p class="gallery-sub">Low-carbon specialized welding rods matching base material</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p8_img3.jpg" data-title="Aerodynamic Bended Kettle - Cold Rolling">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p8_img3.jpg" alt="Aerodynamic Bended Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Aerodynamic Bended Kettle</h3>
+              <p class="gallery-sub">Fuel-efficient bended contours for easy dross removal</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p8_img4.jpg" data-title="Structural Galvanizing Zinc Pot - Transport Dispatch">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p8_img4.jpg" alt="Structural Galvanizing Pot Transport" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Structural Galvanizing Zinc Pot</h3>
+              <p class="gallery-sub">Capacity up to 160,000 lbs for heavy industrial galvanizing</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- SS 316L KETTLES (Page 9) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="cgl-kettles">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-purple-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            SS 316L Kettles
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p9_img1.jpg" data-title="SS 316L Stainless Steel Kettle - High Corrosion Resistance">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p9_img1.jpg" alt="SS 316L Stainless Steel Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS 316L Stainless Steel Kettle</h3>
+              <p class="gallery-sub">Premium grade SS 316L fabrication for chemical & process galvanizing</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p9_img2.jpg" data-title="SS 316L Custom Process Kettle - Reinforcement Ribs">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p9_img2.jpg" alt="SS 316L Process Kettle" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS 316L Custom Process Kettle</h3>
+              <p class="gallery-sub">Precision welded with continuous internal and external reinforcement ribs</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- SPARES FOR CGL LINE (Pages 10 & 11) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="spares">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-amber-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Spares for CGL Line
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+
+          <!-- 1. SS316L Sink Roll Arms -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img1.jpg" data-title="SS316L SINK ROLL ARMS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img1.jpg" alt="SS316L Sink Roll Arms" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS316L SINK ROLL ARMS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 2. SS-316L Sink Rolls -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img2.jpg" data-title="SS-316L SINK ROLLS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img2.jpg" alt="SS-316L Sink Rolls" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS-316L SINK ROLLS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 3. SS-316L Flux Box -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img3.jpg" data-title="SS-316L FLUX BOX">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img3.jpg" alt="SS-316L Flux Box" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS-316L FLUX BOX</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 4. Sleeves for Coils -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img4.jpg" data-title="SLEEVES FOR COILS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img4.jpg" alt="Sleeves for Coils" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SLEEVES FOR COILS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 5. Tilting Box -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img5.jpg" data-title="TILTING BOX (SWL-7MT)">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img5.jpg" alt="Tilting Box" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">TILTING BOX</h3>
+              <p class="gallery-sub">Auto Tilting Bin (SWL-7MT)</p>
+            </div>
+          </div>
+
+          <!-- 6. DSQ / SS-316L Rolls -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img6.jpg" data-title="DSQ / SS-316L ROLLS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img6.jpg" alt="DSQ / SS-316L Rolls" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">DSQ / SS-316L ROLLS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 7. Pyrometer Sight Tube -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p10_img7.jpg" data-title="PYROMETER SIGHT TUBE">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p10_img7.jpg" alt="Pyrometer Sight Tube" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">PYROMETER SIGHT TUBE</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 8. Dross Grabber -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img1.jpg" data-title="DROSS GRABBER">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img1.jpg" alt="Dross Grabber" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">DROSS GRABBER</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 9. SS-316L Snouts -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img2.jpg" data-title="SS-316L SNOUTS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img2.jpg" alt="SS-316L Snouts" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS-316L SNOUTS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 10. SS-316L Dip Roll Arms -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img3.jpg" data-title="SS-316L DIP ROLL ARMS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img3.jpg" alt="SS-316L Dip Roll Arms" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS-316L DIP ROLL ARMS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 11. Heat Exchangers -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img4.jpg" data-title="HEAT EXCHANGERS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img4.jpg" alt="Heat Exchangers" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">HEAT EXCHANGERS</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 12. Blow Box -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img5.jpg" data-title="BLOW-BOX">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img5.jpg" alt="Blow Box" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">BLOW-BOX</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 13. Zinc Pump -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img6.jpg" data-title="ZINC PUMP">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img6.jpg" alt="Zinc Pump" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">ZINC PUMP</h3>
+              <p class="gallery-sub">CGL Line Spares</p>
+            </div>
+          </div>
+
+          <!-- 14. SS-310 Screw Shaft -->
+          <div class="gallery-card group sm:col-span-2 lg:col-span-2" data-img="public/GVT_pic/pdf_gallery/gvt_p11_img7.jpg" data-title="SS-310 SCREW SHAFT FOR ARP PLANTS">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p11_img7.jpg" alt="SS-310 Screw Shaft" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">SS-310 SCREW SHAFT</h3>
+              <p class="gallery-sub">For ARP Plants</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- AUTOCLAVES FOR GLASS/RUBBER/COMPOSITE/AAC (Page 12) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="autoclaves">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-cyan-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Autoclaves for Glass / Rubber / Composite / AAC Industries
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img1.jpg" data-title="Industrial Autoclave Chamber - Internal Rail & Door">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img1.jpg" alt="Industrial Autoclave Chamber" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Industrial Autoclave Door</h3>
+              <p class="gallery-sub">Quick-locking mechanism & interior track system</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img2.jpg" data-title="High Pressure Autoclave - External Shell & Flange">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img2.jpg" alt="High Pressure Autoclave Shell" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">High Pressure Autoclave Shell</h3>
+              <p class="gallery-sub">Hydrostatically tested vessel body for rubber & AAC curing</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img3.jpg" data-title="Autoclave Pressure Vessel - Quick Lock Head">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img3.jpg" alt="Autoclave Quick Lock Head" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave Quick Lock Head</h3>
+              <p class="gallery-sub">Heavy duty tooth flange safety locking door ring</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img4.jpg" data-title="Autoclave Internal Heating & Baffle Radiator">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img4.jpg" alt="Autoclave Radiator System" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave Radiator Baffles</h3>
+              <p class="gallery-sub">Internal heat exchanger grid & forced air circulation</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img5.jpg" data-title="Large Autoclave End Flange & Hinge Mechanism">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img5.jpg" alt="Autoclave Hinge Mechanism" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave Hydraulic Hinge</h3>
+              <p class="gallery-sub">Heavy duty motorized hinge for glass lamination autoclaves</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img6.jpg" data-title="Autoclave Internal Shell Lining Work">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img6.jpg" alt="Autoclave Internal Insulation" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave Internal Fitting</h3>
+              <p class="gallery-sub">Manual alignment and thermal insulation layer fitment</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img7.jpg" data-title="Autoclave Tunnel View & Internal Track">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img7.jpg" alt="Autoclave Interior View" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave Tunnel View</h3>
+              <p class="gallery-sub">Long internal chamber view showing floor trolley tracks</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p12_img8.jpg" data-title="Autoclave Double End Door Assembly">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p12_img8.jpg" alt="Autoclave End Doors" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Autoclave End Door Assembly</h3>
+              <p class="gallery-sub">Dual heavy end plates during shop floor hydrostatic testing</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- INNER COVERS AND COOLING HOODS (Page 13) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="covers">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-indigo-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Inner Covers and Cooling Hoods
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img1.jpg" data-title="Corrugated Inner Cover - Base Flange View">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img1.jpg" alt="Corrugated Inner Cover Base" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Inner Cover Base Flange</h3>
+              <p class="gallery-sub">Corrugated SS inner cover for bell annealing furnace</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img2.jpg" data-title="Inner Cover Shell - Rib Corrugation">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img2.jpg" alt="Inner Cover Rib Shell" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Inner Cover Corrugated Shell</h3>
+              <p class="gallery-sub">Deep corrugated heat-resistant stainless steel cylinder</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group sm:col-span-2 lg:col-span-3" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img3.jpg" data-title="Press Brake Bending of Inner Cover Plates">
+            <div class="gallery-img-box" style="height: 280px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img3.jpg" alt="Press Brake Bending Inner Cover" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">1200-Ton Press Brake Plate Corrugation</h3>
+              <p class="gallery-sub">Precision cold forming of heavy alloy plates for inner covers</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img4.jpg" data-title="Corrugated SS Inner Cover - Side View">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img4.jpg" alt="SS Inner Cover Side View" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Corrugated Inner Cover</h3>
+              <p class="gallery-sub">Custom inspection window & seal flange alignment</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img5.jpg" data-title="High Temperature Annealing Hood Surface">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img5.jpg" alt="Annealing Hood Surface" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Annealing Hood Outer Surface</h3>
+              <p class="gallery-sub">Heat-treated alloy steel surface for thermal endurance</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group sm:col-span-2 lg:col-span-3" data-img="public/GVT_pic/pdf_gallery/gvt_p13_img6.jpg" data-title="Large Diameter Cooling Hood Assembly">
+            <div class="gallery-img-box" style="height: 280px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p13_img6.jpg" alt="Cooling Hood Assembly" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Large Diameter Cooling Hood Assembly</h3>
+              <p class="gallery-sub">Full length corrugated inner cover assembly up to 12 meters height</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- MUFFLES (Page 14) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="covers">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-rose-600 pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            Muffles
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p14_img1.jpg" data-title="D-Shape Muffle Furnace Segment">
+            <div class="gallery-img-box" style="height: 240px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p14_img1.jpg" alt="D-Shape Muffle Furnace" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">D-Shape Heat Treatment Muffle</h3>
+              <p class="gallery-sub">Modular bended D-section muffle for wire & strip annealing</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p14_img2.jpg" data-title="Plasma & Flame Cutting of Muffle Caps">
+            <div class="gallery-img-box" style="height: 240px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p14_img2.jpg" alt="Cutting Muffle Caps" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">CNC Plasma & Flame Cutting</h3>
+              <p class="gallery-sub">High precision plate cutting for muffle ends & flanges</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p14_img3.jpg" data-title="Long Continuous Annealing Muffle Channel">
+            <div class="gallery-img-box" style="height: 240px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p14_img3.jpg" alt="Long Annealing Muffle Channel" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Continuous Annealing Muffle Channel</h3>
+              <p class="gallery-sub">High-temperature alloy muffle tunnel for continuous furnaces</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p14_img4.jpg" data-title="Precision Welding of Heat-Resistant Muffle">
+            <div class="gallery-img-box" style="height: 240px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p14_img4.jpg" alt="Welding Muffle Furnace" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Precision TIG/MIG Muffle Welding</h3>
+              <p class="gallery-sub">Certified welder executing gas-tight joint seams</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- GENERAL FABRICATION IN SS AND MS (Pages 15, 16, 17) -->
+      <!-- ============================================ -->
+      <div class="gallery-section mb-16" data-category="fabrication">
+        <div class="flex items-center gap-3 mb-6 border-l-4 border-[#0066C4] pl-4">
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold uppercase text-slate-900">
+            General Fabrication in SS and MS
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Page 15 items -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p15_img1.jpg" data-title="Heavy Structural MS I-Beam Frame Fabrication">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p15_img1.jpg" alt="Heavy Structural I-Beam Frame" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Heavy Structural MS Beam Frame</h3>
+              <p class="gallery-sub">Custom heavy steel beam girders & base frames</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p15_img2.jpg" data-title="Heavy Industrial Rectangular Duct Container">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p15_img2.jpg" alt="Industrial Rectangular Duct" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Rectangular MS Process Duct</h3>
+              <p class="gallery-sub">Heavy plate duct container with external stiffener ribs</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p15_img3.jpg" data-title="Multi-Tier Steel Support Rack Frame">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p15_img3.jpg" alt="Multi-Tier Steel Support Rack" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Multi-Tier Steel Support Rack</h3>
+              <p class="gallery-sub">Industrial equipment modular skid & rack superstructure</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p15_img4.jpg" data-title="Large Diameter Heavy Wall MS Cylindrical Pipe">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p15_img4.jpg" alt="Large Diameter MS Pipe" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Large Diameter Pipe Shell</h3>
+              <p class="gallery-sub">Heavy wall bended & submerged-arc welded cylindrical shell</p>
+            </div>
+          </div>
+
+          <!-- Page 16 items -->
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p16_img1.jpg" data-title="Internal Coiled Pipe Cooling Shell with Agitator Shaft">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p16_img1.jpg" alt="Coiled Cooling Tank Agitator" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Internal Coiled Cooling Tank</h3>
+              <p class="gallery-sub">Limpet coil internal cooling system with central agitator shaft</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p16_img2.jpg" data-title="Vertical Stainless Steel Process Tank Shell">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p16_img2.jpg" alt="Vertical SS Process Tank" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Vertical SS Process Vessel</h3>
+              <p class="gallery-sub">Custom stainless steel chemical storage & mixing tank</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p16_img3.jpg" data-title="Heavy Duty Skid Base & Winch Frame">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p16_img3.jpg" alt="Heavy Duty Skid Base" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Heavy Equipment Skid Frame</h3>
+              <p class="gallery-sub">Machined base frame with winch drive mounting brackets</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p16_img4.jpg" data-title="CNC Laser / Plasma Cutting Machine Bed Frame">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p16_img4.jpg" alt="CNC Laser Cutting Bed Frame" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">CNC Cutting Table Bed Frame</h3>
+              <p class="gallery-sub">Precision machined slat table frame for high-power plasma & laser</p>
+            </div>
+          </div>
+
+          <!-- Page 17 items -->
+          <div class="gallery-card group sm:col-span-2 lg:col-span-3" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img1.jpg" data-title="Heavy Rectangular Grid Baffle Box Structure">
+            <div class="gallery-img-box" style="height: 280px;">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img1.jpg" alt="Grid Baffle Box Structure" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Heavy Grid Baffle Frame</h3>
+              <p class="gallery-sub">Multi-chamber heat exchanger / filter grid structural frame</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img2.jpg" data-title="White Painted Cylindrical Pressure Vessel Shell">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img2.jpg" alt="White Painted Pressure Vessel" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Flanged Cylindrical Pressure Vessel</h3>
+              <p class="gallery-sub">Epoxy coated heavy wall pressure shell with end flange</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img3.jpg" data-title="Conical Hopper / Cyclone Storage Silo">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img3.jpg" alt="Conical Hopper Cyclone Silo" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Conical Hopper Cyclone Vessel</h3>
+              <p class="gallery-sub">Heavy MS cyclone separator bin on support leg framework</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img4.jpg" data-title="Machined Heavy Cast Iron / Alloy Housing">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img4.jpg" alt="Machined Heavy Cast Housing" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Machined Custom Alloy Housing</h3>
+              <p class="gallery-sub">Precision turned & bored pump / valve casing component</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img5.jpg" data-title="Red Coated Pressure Vessel Column">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img5.jpg" alt="Red Coated Pressure Vessel Column" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Red Coated Pressure Column</h3>
+              <p class="gallery-sub">Vertical process cylinder with multiple branch nozzles</p>
+            </div>
+          </div>
+
+          <div class="gallery-card group" data-img="public/GVT_pic/pdf_gallery/gvt_p17_img6.jpg" data-title="Containerized EOT Hoist & Crane Assembly">
+            <div class="gallery-img-box">
+              <img src="public/GVT_pic/pdf_gallery/gvt_p17_img6.jpg" alt="Containerized EOT Hoist Crane" class="gallery-img" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg></span>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h3 class="gallery-title">Containerized EOT Hoists</h3>
+              <p class="gallery-sub">Export packaged EOT crane hoists loaded inside shipping container</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Callout Section -->
+    <section class="py-16 bg-slate-900 text-white mx-4 mb-16 rounded-3xl max-w-[1400px] md:mx-auto px-6 sm:px-10 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-ind-orange/20 via-transparent to-transparent pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl font-bold md:text-5xl tracking-tight">Request Custom Fabrication</h2>
+        <p class="mt-6 text-base md:text-lg text-slate-300 leading-relaxed">
+          Need custom-designed industrial equipment or specialized heavy fabrication? Our engineering team works directly with your drawings and specifications.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="contact.html" class="cta-btn inline-flex items-center gap-2 rounded-full bg-ind-orange px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-ind-orange-hover hover:shadow-lg">
+            <span>Contact Engineering Team</span>
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4">
+    <div class="relative max-w-5xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[90vh]">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-950">
+        <h3 id="lightbox-title" class="font-display font-bold text-lg text-white"></h3>
+        <button id="lightbox-close" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/10 transition-colors" aria-label="Close image preview">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <div class="p-4 flex items-center justify-center overflow-auto max-h-[75vh] bg-black/50">
+        <img id="lightbox-img" src="" alt="" class="max-h-[70vh] w-auto max-w-full object-contain rounded-lg" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mx-4 mb-4 rounded-2xl bg-ind-black pt-16 pb-8 text-white md:mx-6 md:mb-6">
+    <div class="px-6 md:px-10">
+      <div class="grid gap-12 md:grid-cols-3">
+        <div>
+          <h2 class="font-display text-3xl font-bold leading-tight md:text-4xl">Let's Build The Future Together</h2>
+          <a href="contact.html" class="cta-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ind-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ind-orange-hover">Get Started</a>
+        </div>
+        <div>
+          <h3 class="label-text mb-4 text-xs text-grey-light">Contact</h3>
+          <ul class="space-y-3 text-sm text-grey-light">
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="mt-0.5 shrink-0 text-ind-orange" aria-hidden="true">
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>D-12, Meerut Road, Industrial Area,Ghaziabad(U.P.), India – 201002</li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="shrink-0 text-ind-orange" aria-hidden="true">
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+              </svg><a href="tel:+919999775755" class="hover:text-white">+91-9999775755</a> / <a href="tel:+918178195655" class="hover:text-white">+91-8178195655</a></li>
+            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="shrink-0 text-ind-orange" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg><a href="mailto:info@gvtgroup.net" class="hover:text-white">info@gvtgroup.net</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap items-start gap-10 sm:gap-14 md:gap-16">
+          <div>
+            <h3 class="label-text mb-4 text-xs text-grey-light">Follow Us</h3>
+            <div class="flex gap-3"><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a><a href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-light transition-colors hover:border-ind-orange hover:text-ind-orange"
+                aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg></a></div>
+          </div>
+
+          <!-- Made by VINEB Digital -->
+          <div class="flex flex-col items-start select-none">
+            <h3 class="label-text mb-4 text-xs text-grey-light">made by</h3>
+            <div class="flex flex-col leading-none font-sans">
+              <span class="font-bold text-[13px] uppercase"
+                style="color: #9FE814; letter-spacing: 0.18em;">VINEB</span>
+              <span class="font-semibold text-xl tracking-tight text-white mt-0.5">Digital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border-dark pt-6 text-xs text-grey-light md:flex-row">
+        <p>© <span data-current-year>2026</span> GVT India Private Limited. All rights reserved.</p>
+        <div class="flex flex-wrap justify-center gap-4"><a href="index.html" class="hover:text-white">Home</a><a
+            href="about.html" class="hover:text-white">About</a><a href="products.html"
+            class="hover:text-white">Products</a><a href="our-client.html" class="hover:text-white">Our Client</a><a href="gallery.html" class="hover:text-white">Gallery</a><a href="contact.html" class="hover:text-white">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float container -->
+  <div id="whatsapp-float-container"></div>
+
+  <style>
+    .gallery-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px -10px rgba(0, 102, 196, 0.18), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 102, 196, 0.4);
+    }
+
+    .gallery-img-box {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      background-color: #f8fafc;
+      overflow: hidden;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.4);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-zoom-icon {
+      height: 48px;
+      width: 48px;
+      border-radius: 9999px;
+      background-color: #ffffff;
+      color: #0066C4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-zoom-icon {
+      transform: scale(1);
+    }
+
+    .gallery-caption {
+      padding: 1.25rem 1rem;
+      background-color: #ffffff;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .gallery-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .gallery-sub {
+      font-family: "Inter", sans-serif;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    .gallery-tab-btn.active {
+      background-color: #0066C4 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(0, 102, 196, 0.25);
+    }
+  </style>
+
+  <script type="module" src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Category Tab Filtering
+      const filterBtns = document.querySelectorAll('[data-gallery-filter]');
+      const sections = document.querySelectorAll('.gallery-section');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-gallery-filter');
+
+          sections.forEach(sec => {
+            if (filter === 'all' || sec.getAttribute('data-category') === filter) {
+              sec.style.display = 'block';
+            } else {
+              sec.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Lightbox Modal Functionality
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const imgSrc = card.getAttribute('data-img');
+          const title = card.getAttribute('data-title');
+
+          if (imgSrc) {
+            lightboxImg.src = imgSrc;
+            lightboxTitle.textContent = title || 'Product Image';
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            lightbox.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('opacity-100', 'pointer-events-auto');
+        lightbox.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose?.addEventListener('click', closeLightbox);
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    });
+  </script>
+</body>
+
+</html>
